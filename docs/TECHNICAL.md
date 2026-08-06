@@ -98,6 +98,14 @@ and accepted by real hardware.
 
 ## Audio formats — what these iPods actually play
 
+**The 16-bit / 44.1–48 kHz ceiling is a limitation of the iPod hardware
+itself, not of Syncopation.** Every click-wheel iPod (classic, nano, mini,
+video, photo, shuffle) has a 16-bit playback pipeline — the devices predate
+hi-res audio entirely, and each one declares these limits in its own system
+files. Files with more depth are truncated by the firmware at best, or fail
+to decode at all. Syncopation converts to the best format the device can
+genuinely play; your original hi-res files are never modified.
+
 The device declares its limits in `SysInfoExtended` → `AudioCodecs`. For
 both the classic and nano 3G:
 
