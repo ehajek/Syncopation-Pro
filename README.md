@@ -23,10 +23,20 @@ appear on the device, with album art, ready to play the moment you eject.
   play; hi-res sources are downsampled correctly.
 - **Album artwork** — covers are extracted from your files, rendered into
   the device's native thumbnail formats, and shown on the iPod.
-- **Safe by design** — existing music and playlists on the iPod are always
-  preserved, every database write keeps a backup on the device, syncing only
-  adds and never deletes, and nothing is duplicated (tracks already on the
-  iPod are recognized, even ones loaded by other apps).
+- **Interrupted syncs don't start over** — the iPod's library is saved as the
+  transfer runs, not once at the end. Knock the cable out an hour into a big
+  sync and you keep everything transferred so far as a working, playable
+  library; sync again and it carries on where it stopped.
+- **Reclaims wasted space** — removing a track from an iPod normally leaves
+  its audio file behind forever, invisible and unplayable. Syncopation finds
+  these strays and clears them automatically. On a real 160 GB classic that
+  recovered **33.8 GB** — a fifth of the drive.
+- **Keeps your library tidy** — tracks already on the iPod are recognized and
+  never duplicated, even ones another app put there, and missing album art is
+  filled in as you sync.
+- **Safe by design** — existing music and playlists are always preserved,
+  every database write keeps a backup on the device, and syncing only adds
+  unless you explicitly ask it to match your source folder.
 - **Everything the free version does** — one-way and two-way folder/SD-card
   sync with conflict handling, previews, and per-mode file filtering.
 
