@@ -86,6 +86,25 @@ fields zeroed and the hashing-scheme field (0x30) set to 1. Syncopation's
 Swift port is verified bit-identical against an independent implementation
 and accepted by real hardware.
 
+### Add to Library vs Match Library
+
+By default an iPod sync only ever **adds**: new music is copied on, and
+nothing is removed. Deleting an album from the source folder leaves it on the
+iPod forever.
+
+Ticking **Match Library** makes the iPod match the source folder instead. After
+the add pass, any track in the library whose title/artist/album is no longer
+found in the source is removed — its file deleted, its record dropped from the
+database and from every playlist, and its manifest entry cleared. This includes
+music other software put on the device, since "matches the source folder" can't
+mean anything else.
+
+Two gates protect it, because it is the only path that deletes music the iPod
+can currently play: the checkbox explains itself when ticked, and the sync stops
+to show the exact list, count and size before removing anything. **Preview never
+removes** — it lists what would go. Match Library and Clear destination are
+mutually exclusive.
+
 ### Album artwork
 
 Covers are **embedded in the audio files themselves** — a `PICTURE` block in
