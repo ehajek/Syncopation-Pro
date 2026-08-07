@@ -32,10 +32,11 @@ Keys that matter:
 | `AudioCodecs` | The device's own declaration of what it can play. |
 
 Model identification uses the **serial-number suffix** (last 3 chars) against
-a complete table generated from the libgpod project's device database
-(`IPodModels.swift` — 242 suffixes, 198 model numbers). The iPod line is
-discontinued, so this table is final. Order: serial suffix → model number →
-FamilyID → generic.
+a complete table in `IPodModels.swift`, compiled from public sources — Apple's
+own "Identify your iPod model" support documents and archived serial-suffix
+lists, EveryMac's per-model specifications, and the Chipmunk International
+model database. The iPod line is discontinued, so the table is final.
+Lookup order: serial suffix → model number → FamilyID → generic.
 
 ## The iTunesDB
 
@@ -175,7 +176,8 @@ Nothing in the app needs to handle that case.
 
 ## References
 
-- libgpod (the gtkpod project) — the reverse-engineered format reference:
-  https://github.com/gtkpod/libgpod
+- libgpod (the gtkpod project) — the reverse-engineered reference for the
+  iTunesDB and ArtworkDB formats: https://github.com/gtkpod/libgpod
+  (The iPod model tables are **not** derived from libgpod; see above.)
 - The hash58 port retains its BSD attribution in `IPodDB.swift`
   (Copyright 2007 Christophe Fergeau, based on work by wtbw).
