@@ -102,8 +102,14 @@ mean anything else.
 Two gates protect it, because it is the only path that deletes music the iPod
 can currently play: the checkbox explains itself when ticked, and the sync stops
 to show the exact list, count and size before removing anything. **Preview never
-removes** — it lists what would go. Match Library and Clear destination are
-mutually exclusive.
+removes** — it lists what would go.
+
+Erasing is separate: an **Erase…** button beside Refresh and Eject wipes the
+destination on its own, without syncing afterwards. On an iPod it deletes every
+audio file, empties the library and clears artwork, while leaving the device's
+own menus, settings and firmware untouched; in the folder modes it empties the
+destination folder. It asks once, with the real item count, and does nothing
+else — no copy follows.
 
 ### Album artwork
 
