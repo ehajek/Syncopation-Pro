@@ -31,12 +31,29 @@ Keys that matter:
 | `FamilyID` | Device family (11 = classic, 12 = nano 3G). Fallback naming only. |
 | `AudioCodecs` | The device's own declaration of what it can play. |
 
-Model identification uses the **serial-number suffix** (last 3 chars) against
-a complete table in `IPodModels.swift`, compiled from public sources — Apple's
-own "Identify your iPod model" support documents and archived serial-suffix
+### Device identification — a proprietary, independently built database
+
+Model identification uses the **serial-number suffix** (last 3 characters)
+against a complete device table that is **Syncopation Pro's own proprietary
+work**. It contains **no libgpod, gtkpod, or other LGPL-derived data**, and is
+not published.
+
+It was compiled independently from public reference sources: Apple's own
+"Identify your iPod model" support documents and its archived serial-suffix
 lists, EveryMac's per-model specifications, and the Chipmunk International
-model database. The iPod line is discontinued, so the table is final.
-Lookup order: serial suffix → model number → FamilyID → generic.
+model database. Building it from scratch — rather than reusing the tables that
+open-source projects ship — was a deliberate decision, so that the shipping
+application carries no copyleft-licensed data and its identification layer is
+wholly owned.
+
+The iPod line is discontinued, so the table is final: every model Apple made
+is covered, and no future device can be missing from it. Lookup order is
+serial suffix → model number → FamilyID → generic fallback.
+
+To be unambiguous about what is and isn't borrowed: libgpod is credited below
+as the published reference for the *binary database formats* (and for the
+BSD-licensed hash58 routine, whose attribution is retained in the source).
+**Device identification is not among those borrowings.**
 
 ## The iTunesDB
 
@@ -249,8 +266,13 @@ Nothing in the app needs to handle that case.
 
 ## References
 
-- libgpod (the gtkpod project) — the reverse-engineered reference for the
-  iTunesDB and ArtworkDB formats: https://github.com/gtkpod/libgpod
-  (The iPod model tables are **not** derived from libgpod; see above.)
+- libgpod (the gtkpod project) — the published reference for the iTunesDB and
+  ArtworkDB **binary formats**: https://github.com/gtkpod/libgpod
+- The hash58 checksum routine is ported from libgpod's `itdb_hash58.c`
+  (BSD licence, Christophe Fergeau / wtbw); that attribution is retained in
+  `IPodDB.swift`.
+- **Device identification is not derived from libgpod or any other
+  open-source project** — see "Device identification" above. That database is
+  proprietary to Syncopation Pro and is not distributed.
 - The hash58 port retains its BSD attribution in `IPodDB.swift`
   (Copyright 2007 Christophe Fergeau, based on work by wtbw).
