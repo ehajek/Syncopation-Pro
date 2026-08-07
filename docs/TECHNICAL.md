@@ -132,6 +132,38 @@ This costs nothing audible: the iPod truncates to 16-bit anyway, and the
 Formats copied as-is: MP3, M4A/AAC, M4B, WAV, AIFF. Formats the firmware
 can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
 
+## Styling and OS compatibility
+
+The app runs on **macOS 14 (Sonoma) and later** on Apple Silicon, and adapts
+its appearance to the system it finds:
+
+| System | Appearance |
+|---|---|
+| macOS 26+ | Liquid Glass — frosted window, glass mode selector, glass buttons and checkboxes |
+| macOS 14–15 | The same layout in standard native controls: bordered buttons, material panels |
+
+Liquid Glass APIs (`.glass` / `.glassProminent` button styles, `glassEffect`,
+`GlassEffectContainer`) exist only on macOS 26. They are never called
+directly: every use goes through `syncoButton()` and `syncoPanel()` in
+`Syncopation.swift`, which branch on `if #available(macOS 26.0, *)` and fall
+back to `.bordered` / `.borderedProminent` buttons and material-filled
+panels. Checkboxes use a custom `ToggleStyle` that renders identically on
+every supported system.
+
+Two things keep this honest:
+
+- The build pins `-target arm64-apple-macos14.0`, so **the compiler refuses
+  any macOS 26 API that isn't inside an availability check.** This is what
+  makes the fallback trustworthy rather than aspirational — the deployment
+  target, not discipline, enforces it.
+- `LSMinimumSystemVersion` in `Info.plist` matches that target. Change one
+  and you must change the other; the binary's `minos` load command should
+  agree (`vtool -show-build-version`).
+
+If a user has *Reduce Transparency* enabled in Accessibility settings,
+macOS renders the glass materials as flat opaque surfaces automatically.
+Nothing in the app needs to handle that case.
+
 ## Not yet supported
 
 - **Album artwork** — lives in a separate `ArtworkDB` + `.ithmb` thumbnail

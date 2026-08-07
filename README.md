@@ -32,7 +32,9 @@ appear on the device, with album art, ready to play the moment you eject.
 
 ## Requirements
 
-- macOS 13 or later (Apple Silicon)
+- macOS 14 (Sonoma) or later, Apple Silicon. On macOS 26 and later the
+  app uses the Liquid Glass appearance; on earlier systems it falls back
+  to standard native controls automatically.
 - An iPod in disk mode: iPod classic (all generations), iPod nano
   (through 4th gen), iPod video, mini, or photo. (iPod touch and iPhone use
   a different sync system and are not supported; shuffle support is planned.)
