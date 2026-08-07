@@ -86,13 +86,13 @@ fields zeroed and the hashing-scheme field (0x30) set to 1. Syncopation's
 Swift port is verified bit-identical against an independent implementation
 and accepted by real hardware.
 
-### Add to Library vs Match Library
+### Add to Library vs Match Default Source
 
 By default an iPod sync only ever **adds**: new music is copied on, and
 nothing is removed. Deleting an album from the source folder leaves it on the
 iPod forever.
 
-Ticking **Match Library** makes the iPod match the source folder instead. After
+Ticking **Match Default Source** makes the iPod match the source folder instead. After
 the add pass, any track in the library whose title/artist/album is no longer
 found in the source is removed — its file deleted, its record dropped from the
 database and from every playlist, and its manifest entry cleared. This includes
