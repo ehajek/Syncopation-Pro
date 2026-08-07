@@ -86,6 +86,53 @@ fields zeroed and the hashing-scheme field (0x30) set to 1. Syncopation's
 Swift port is verified bit-identical against an independent implementation
 and accepted by real hardware.
 
+### Album artwork
+
+Covers are **embedded in the audio files themselves** — a `PICTURE` block in
+FLAC, an `APIC` frame in MP3, a `covr` atom in M4A — and Syncopation reads
+them straight from the source file. On the iPod they live somewhere else
+entirely: a separate `ArtworkDB` plus `.ithmb` files holding raw pre-rendered
+thumbnails, in the exact pixel formats that device accepts. Each track links
+to its cover through three fields in its `mhit` record (`has_artwork`,
+`artwork_count`, and `mhii_link` → an `mhii` id in the ArtworkDB).
+
+The classic 6G/7G and nano 3G share four cover formats, all RGB565
+little-endian: **1061** (55×55, padded to a 56-pixel row stride), **1060**
+(320×320), and **1068** / **1055** (both 128×128). Thumbnails are appended to
+`F<format>_1.ithmb` and referenced by byte offset, so existing artwork is
+never rewritten — only extended.
+
+**Artwork is filled in automatically as part of every sync**, not as a
+separate command. After the copy pass, any track in the library without a
+cover — including music another app put there — is matched to a source file
+by tags, and its embedded art is encoded and linked. One cover serves an
+entire album, and art already on the device is reused rather than duplicated,
+so a library of thousands of tracks costs only as many thumbnails as it has
+distinct albums. Tracks whose source file can't be found, or whose file has
+no embedded cover, are counted and reported; nothing fails.
+
+### Stray files, and cleaning them up
+
+Removing a track from an iPod's library does not delete its audio file. Most
+software (including iTunes and Swinsian) leaves the file behind, so drives
+accumulate **orphans**: audio in `iPod_Control/Music` that no database record
+points at. The iPod can't play them and won't show them, but they still
+occupy the disk. A real example: a 160 GB classic under test held 7,118 audio
+files while its library listed only 4,542 — **2,576 orphans wasting 33.8 GB**,
+a fifth of the drive.
+
+**Cleanup runs automatically at the end of every sync**, once the database is
+safely written. Every orphan is identified and its tags read, then:
+
+- an orphan whose song **is** listed in the library is a redundant copy and is
+  deleted (this is the common case, and it is lossless);
+- an orphan whose song is **not** in the library anywhere is music the device
+  has lost. It is **never deleted** — it's reported in the log so it can be
+  recovered deliberately.
+
+The result: space is reclaimed without a prompt, because only provably
+redundant data is removed, while anything irreplaceable survives untouched.
+
 ### Safety model
 
 - The existing database is parsed and **everything is preserved**: tracks,
@@ -167,9 +214,10 @@ Nothing in the app needs to handle that case.
 
 ## Not yet supported
 
-- **Album artwork** — lives in a separate `ArtworkDB` + `.ithmb` thumbnail
-  files in device-specific pixel formats (the accepted formats are listed in
-  `SysInfoExtended` → `ImageSpecifications`). Planned.
+- **Artwork on pre-2007 iPods** — those generations use older thumbnail
+  formats that haven't been verified against hardware, so artwork is skipped
+  there (music syncs normally). The formats each device accepts are listed in
+  its `SysInfoExtended` → `ImageSpecifications`.
 - **iPod shuffle** — uses `iTunesSD`, a different database entirely. Refused
   with a clear message.
 - **hash72/hashAB devices** (nano 5G+, iPod touch, iPhone) — refused.
