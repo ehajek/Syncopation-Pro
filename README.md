@@ -60,7 +60,19 @@ appear on the device, with album art, ready to play the moment you eject.
 
 ## Status
 
-In active development. Availability and pricing to be announced.
+In active development, heading for the **Mac App Store**.
+
+Working today on real hardware — an iPod classic (7th gen) and an iPod nano
+(3rd gen): device identification, FLAC → ALAC conversion, writing the iPod's
+native checksummed database, album artwork, checkpointed transfers that
+survive a disconnect, and automatic cleanup of files other software left
+stranded on the device.
+
+Remaining before submission: moving audio conversion in-process (required by
+the App Store sandbox), a compatibility guard for the earliest iPods, and the
+usual store paperwork.
+
+Pricing and availability to be announced.
 
 ---
 
