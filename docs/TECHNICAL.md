@@ -224,13 +224,13 @@ can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
 
 ## Styling and OS compatibility
 
-The app runs on **macOS 14 (Sonoma) and later** on Apple Silicon, and adapts
+The app runs on **macOS 13 (Ventura) and later**, as a universal binary for Intel and Apple Silicon, and adapts
 its appearance to the system it finds:
 
 | System | Appearance |
 |---|---|
 | macOS 26+ | Liquid Glass — frosted window, glass mode selector, glass buttons and checkboxes |
-| macOS 14–15 | The same layout in standard native controls: bordered buttons, material panels |
+| macOS 13–15 | The same layout in standard native controls: bordered buttons, material panels |
 
 Liquid Glass APIs (`.glass` / `.glassProminent` button styles, `glassEffect`,
 `GlassEffectContainer`) exist only on macOS 26. They are never called
@@ -242,7 +242,7 @@ every supported system.
 
 Two things keep this honest:
 
-- The build pins `-target arm64-apple-macos14.0`, so **the compiler refuses
+- The build pins `-target <arch>-apple-macos13.0`, so **the compiler refuses
   any macOS 26 API that isn't inside an availability check.** This is what
   makes the fallback trustworthy rather than aspirational — the deployment
   target, not discipline, enforces it.

@@ -42,7 +42,7 @@ appear on the device, with album art, ready to play the moment you eject.
 
 ## Requirements
 
-- macOS 14 (Sonoma) or later, Apple Silicon. On macOS 26 and later the
+- macOS 13 (Ventura) or later — Intel or Apple Silicon. On macOS 26 and later the
   app uses the Liquid Glass appearance; on earlier systems it falls back
   to standard native controls automatically.
 - An iPod in disk mode: iPod classic (all generations), iPod nano
