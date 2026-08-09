@@ -260,8 +260,9 @@ Nothing in the app needs to handle that case.
   formats that haven't been verified against hardware, so artwork is skipped
   there (music syncs normally). The formats each device accepts are listed in
   its `SysInfoExtended` → `ImageSpecifications`.
-- **iPod shuffle** — uses `iTunesSD`, a different database entirely. Refused
-  with a clear message.
+- **iPod shuffle** — not supported, and not planned. Shuffles store their
+  library in `iTunesSD` rather than `iTunesDB`; they are detected and refused
+  with a clear message rather than failing partway through a sync.
 - **hash72/hashAB devices** (nano 5G+, iPod touch, iPhone) — refused.
 
 ## References
