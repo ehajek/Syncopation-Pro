@@ -128,6 +128,37 @@ own menus, settings and firmware untouched; in the folder modes it empties the
 destination folder. It asks once, with the real item count, and does nothing
 else — no copy follows.
 
+### Restored and brand-new iPods
+
+Restoring an iPod — the first thing most people do with a fresh flash-storage
+mod or a second-hand device — deletes `SysInfoExtended`. Finder and Music only
+write that file during a **sync**, never during a restore, so a just-restored
+iPod carries none of the information the obvious implementation depends on: no
+serial number, no model, no `DBVersion`, and no FireWire GUID.
+
+That state is dangerous rather than merely inconvenient. Without `DBVersion` an
+app can conclude no checksum is needed and write a perfectly well-formed but
+*unchecksummed* library, which a classic rejects outright — sending a customer's
+brand-new device to the "Use iTunes to restore" screen on their first attempt.
+
+Syncopation takes every fact from somewhere a restore cannot erase:
+
+| Needed | Where it comes from |
+|---|---|
+| Is a checksum required? | The hashing scheme declared by the library already on the device — its own verdict, and present even on a freshly restored iPod |
+| The key to hash with | The FireWire GUID, which every iPod reports over USB as its serial number (read via IOKit, so it works under the App Store sandbox) |
+| Which model this is | The device's serial number when present; otherwise an identification this app made earlier and remembered against the GUID; otherwise the device family USB reports |
+
+Only the last row degrades. A device that has never been identified shows a
+generic name until it is synced once with Finder or Music, which recreates
+`SysInfoExtended`; from then on the identification is remembered against the
+GUID and survives any future restore. **Nothing functional depends on it** —
+conversion, artwork, the checksum and playback all work on a device that has
+never met Apple's software.
+
+Syncopation never writes `SysInfoExtended` itself. It is Apple's file, and
+fabricating one risks confusing Music and Finder later.
+
 ### Album artwork
 
 Covers are **embedded in the audio files themselves** — a `PICTURE` block in
