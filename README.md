@@ -11,6 +11,8 @@ appear on the device, with album art, ready to play the moment you eject.
 > published here. For the free, open-source edition, see the
 > [Syncopation Community Edition](https://github.com/ehajek/Syncopation-Community-Edition).
 
+![Syncopation Pro in iPod mode with an iPod classic verified and ready to sync](docs/images/ipod-mode.png)
+
 ## What it does
 
 - **Synco-Mode** — one app, four modes: Music, ePUB/PDF, All Files, and iPod.
@@ -39,6 +41,8 @@ appear on the device, with album art, ready to play the moment you eject.
   unless you explicitly ask it to match your source folder.
 - **Everything the free version does** — one-way and two-way folder/SD-card
   sync with conflict handling, previews, and per-mode file filtering.
+
+![A live sync converting FLAC to Apple Lossless, with the Debug panel showing device details and the per-file log](docs/images/syncing-debug.png)
 
 ## Requirements
 
