@@ -8,8 +8,8 @@ appear on the device, with album art, ready to play the moment you eject.
 
 > This repository is the **support and documentation home** for Syncopation
 > Pro. The application itself is proprietary and its source code is not
-> published here. For the free, open-source v2.0 file-sync app, see the
-> [Syncopation Community Edition](https://github.com/ehajek/Syncopation).
+> published here. For the free, open-source edition, see the
+> [Syncopation Community Edition](https://github.com/ehajek/Syncopation-Community-Edition).
 
 ## What it does
 
