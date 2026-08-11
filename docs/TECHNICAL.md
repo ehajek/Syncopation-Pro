@@ -253,6 +253,20 @@ This costs nothing audible: the iPod truncates to 16-bit anyway, and the
 Formats copied as-is: MP3, M4A/AAC, M4B, WAV, AIFF. Formats the firmware
 can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
 
+**Two decoders, because one isn't enough.** Conversion normally runs through
+AVFoundation, but that reader validates a FLAC's *seektable* when opening the
+file and rejects the whole thing with `'dta?'` (unsupported data format) if it
+disapproves — before decoding a single frame, and regardless of the audio being
+perfectly fine. Encountered in the wild: one track in a 4,541-file library
+failed while its neighbours, identical in sample rate, bit depth and block
+size, converted without trouble. Removing only the seektable made AVFoundation
+accept it.
+
+So a failure falls back to the older CoreAudio file API (`ExtAudioFile`) — the
+same one `afconvert` uses, which ignores seektables entirely and decodes such
+files without complaint. Both paths are in-process, so neither depends on a
+sandbox grant, and both produce identical 16-bit output.
+
 ## Styling and OS compatibility
 
 The app runs on **macOS 13 (Ventura) and later**, as a universal binary for Intel and Apple Silicon, and adapts
