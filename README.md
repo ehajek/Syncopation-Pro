@@ -23,6 +23,13 @@ appear on the device, with album art, ready to play the moment you eject.
 - **FLAC → ALAC conversion** — automatic, using macOS's built-in encoder.
   Output is 16-bit / 44.1–48 kHz, exactly what the devices were built to
   play; hi-res sources are downsampled correctly.
+- **Audiobooks — Synco-pod** — mark a sync as audiobooks and the tracks are
+  filed as what they are: they land in the iPod's own Audiobooks menu,
+  resume where you stopped, and stay out of shuffle. Filing into the menu
+  works on 2007-and-later models (iPod classic, iPod nano 3rd generation
+  on); earlier iPods file everything under Music — the same result Apple's
+  own current tools produce for those devices. DRM-free files only.
+  Podcast filing is in the works.
 - **Album artwork** — covers are extracted from your files, rendered into
   the device's native thumbnail formats, and shown on the iPod.
 - **Interrupted syncs don't start over** — the iPod's library is saved as the
