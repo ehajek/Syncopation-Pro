@@ -78,7 +78,7 @@ at 1.1. What each version repaired and added, release by release:
 | Conversion runs ahead of the copy — a faster first sync | ✓ | ✓ |
 | The Mac stays awake while a sync runs | ✓ | ✓ |
 | Space check prices hi-res tracks at their converted size | ✓ | ✓ |
-| Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | — |
+| Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | ✓ |
 | A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
 | Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
 
