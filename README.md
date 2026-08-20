@@ -39,6 +39,13 @@ appear on the device, with album art, ready to play the moment you eject.
 - **Safe by design** — existing music and playlists are always preserved,
   every database write keeps a backup on the device, and syncing only adds
   unless you explicitly ask it to match your source folder.
+- **Podcasts and audiobooks — Synco-pod** — filed as what they are: they
+  resume where you stopped, stay out of shuffle, and are marked unplayed.
+  DRM-free files only; Apple Books and Audible purchases are copy-protected.
+- **Accessibility** — Liquid Glass on macOS 26 and up; window transparency
+  and a System, Light, or Dark appearance on every supported macOS, Ventura
+  included — each switchable. A sound in your own alert tone when a sync
+  finishes.
 - **Everything the free version does** — one-way and two-way folder/SD-card
   sync with conflict handling, previews, and per-mode file filtering.
 
@@ -65,23 +72,22 @@ at 1.1. What each version repaired and added, release by release:
 | Match Default Source — device mirrors the folder, deletions included | ✓ | — |
 | Preview, Erase, Eject, free-space check | ✓ | ✓ |
 | Debug drawer — device facts and the per-file log | ✓ | ✓ |
-| Interface | Liquid Glass on macOS 26, native controls on 13–15 | Flat, native |
+| Accessibility | Liquid Glass (macOS 26 and up); transparency, System, Light, Dark mode on every supported macOS, Ventura included — each switchable | System, Light, Dark mode — flat |
 | Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
 | Price | $19.99 once; $24.99 from January 1, 2027 | Free, GPL v3 |
 | Conversion runs ahead of the copy — a faster first sync | ✓ | ✓ |
 | The Mac stays awake while a sync runs | ✓ | ✓ |
 | Space check prices hi-res tracks at their converted size | ✓ | ✓ |
 | Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | — |
-| Appearance — follow the system, or pin light or dark | ✓ | ✓ |
-| Liquid Glass and window transparency switchable off | ✓ | n/a — already flat |
 | A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
 | Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
 
 ## Requirements
 
-- macOS 13 (Ventura) or later — Intel or Apple Silicon. On macOS 26 and later the
-  app uses the Liquid Glass appearance; on earlier systems it falls back
-  to standard native controls automatically.
+- macOS 13 (Ventura) or later — Intel or Apple Silicon. On macOS 26 and later
+  the app uses the Liquid Glass appearance; on earlier systems it falls back
+  to standard native controls automatically. Window transparency and the
+  System / Light / Dark appearance work on every supported version.
 - An iPod in disk mode: iPod classic (all generations), iPod nano
   (through 4th gen), iPod video, mini, or photo. (iPod touch and iPhone use a
   different sync system and are not supported, nor is the iPod shuffle.)
