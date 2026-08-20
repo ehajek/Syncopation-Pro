@@ -53,6 +53,36 @@ appear on the device, with album art, ready to play the moment you eject.
   (through 4th gen), iPod video, mini, or photo. (iPod touch and iPhone use a
   different sync system and are not supported, nor is the iPod shuffle.)
 
+## Getting your iPod ready
+
+Syncopation talks to the iPod directly, so the one-time setup is about telling
+iTunes — or Finder, which handles iPods on modern macOS — to stand down.
+Connect the iPod, open its device page (Finder's sidebar on macOS Catalina and
+later, iTunes everywhere else), and set it up like this:
+
+1. **Turn OFF "Automatically sync when this iPod is connected."**
+2. **Turn ON "Enable disk use" and "Manually manage music and videos."**
+   Disk mode is how Syncopation sees the device at all.
+3. **Uncheck "Convert higher bit rate songs to AAC."** Syncopation handles
+   conversion itself, matched to what the device actually plays.
+4. **Uncheck every sync category — Music, Photos, Podcasts, all of them.**
+   Nothing should be left for iTunes or Finder to manage.
+5. Click Apply, then eject. From here on, Syncopation does the syncing.
+
+One habit worth keeping: **step away from the iPod in Finder before you
+eject** — close any windows browsing its files, and click off its device
+configuration page. Either one can hold the device busy, and the eject —
+from Syncopation or anywhere else — fails with "disk in use" until Finder
+lets go.
+
+> [!WARNING]
+> **Pick one librarian.** Moving an iPod back and forth between
+> iTunes/Apple Music/Finder syncing and Syncopation can scramble the music
+> library on the device — each program rewrites the iPod's database in its
+> own image. Nothing physical is ever at risk: the worst case is erasing the
+> device's music and syncing it again. But save yourself the round trip —
+> once an iPod lives with Syncopation, let it.
+
 ## Support
 
 - **Questions and bug reports:** [open an issue](../../issues) in this
