@@ -44,6 +44,39 @@ appear on the device, with album art, ready to play the moment you eject.
 
 ![A live sync converting FLAC to Apple Lossless, with the Debug panel showing device details and the per-file log](docs/images/syncing-debug.png)
 
+## Pro vs Community Edition
+
+Same engine, same four modes, same care with the iPod's database. Pro adds
+the things that take a library from *copied* to *kept*. Both editions are
+at 1.1. What each version repaired and added, release by release:
+[RELEASES.md](RELEASES.md).
+
+| | **Pro** | **CE** |
+|---|:---:|:---:|
+| Four Synco-modes — Music, ePUB/PDF, All Files, iPod | ✓ | ✓ |
+| Native iPod database engine — hash58 checksums, tracks play on eject | ✓ | ✓ |
+| FLAC → Apple Lossless, 16-bit, in-process | ✓ | ✓ |
+| iPod identification | Exact model — "iPod classic (7th gen)" | Family only — "iPod classic" |
+| Album artwork on the iPod | ✓ | — |
+| Skips tracks already on the device | By tags — even ones another app put there | By file |
+| Interrupted sync | Checkpointed — carries on where it stopped | Stops cleanly — tidies up on the next run |
+| Reclaims stray files other software left behind | ✓ | — |
+| Two-way sync for folders and SD cards | ✓ | — |
+| Match Default Source — device mirrors the folder, deletions included | ✓ | — |
+| Preview, Erase, Eject, free-space check | ✓ | ✓ |
+| Debug drawer — device facts and the per-file log | ✓ | ✓ |
+| Interface | Liquid Glass on macOS 26, native controls on 13–15 | Flat, native |
+| Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
+| Price | $19.99 once; $24.99 from January 1, 2027 | Free, GPL v3 |
+| Conversion runs ahead of the copy — a faster first sync | ✓ | ✓ |
+| The Mac stays awake while a sync runs | ✓ | ✓ |
+| Space check prices hi-res tracks at their converted size | ✓ | ✓ |
+| Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | — |
+| Appearance — follow the system, or pin light or dark | ✓ | ✓ |
+| Liquid Glass and window transparency switchable off | ✓ | n/a — already flat |
+| A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
+| Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
+
 ## Requirements
 
 - macOS 13 (Ventura) or later — Intel or Apple Silicon. On macOS 26 and later the
@@ -114,6 +147,7 @@ costs nothing already copied, and the next sync carries on from there.
 
 - **Questions and bug reports:** [open an issue](../../issues) in this
   repository.
+- **What changed in each version:** [RELEASES.md](RELEASES.md).
 - **How it works under the hood:**
   [docs/TECHNICAL.md](docs/TECHNICAL.md) — the full technical reference for
   the iPod support: device detection, the iTunesDB format, checksums, and
@@ -121,7 +155,7 @@ costs nothing already copied, and the next sync carries on from there.
 
 ## Status
 
-In active development, heading for the **Mac App Store**.
+**Available on the Mac App Store** — version 1.1, released August 20, 2026.
 
 Working today on real hardware — an iPod classic (7th gen) and an iPod nano
 (3rd gen): device identification, FLAC → ALAC conversion, writing the iPod's
@@ -129,11 +163,11 @@ native checksummed database, album artwork, checkpointed transfers that
 survive a disconnect, and automatic cleanup of files other software left
 stranded on the device.
 
-Remaining before submission: moving audio conversion in-process (required by
-the App Store sandbox), a compatibility guard for the earliest iPods, and the
-usual store paperwork.
+## Pricing
 
-Pricing and availability to be announced.
+**$19.99, once,** through December 31, 2026. From January 1, 2027 the price
+is **$24.99**. Either way, every 1.x update is included in that sentence —
+there is no subscription.
 
 ---
 
