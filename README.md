@@ -83,6 +83,33 @@ lets go.
 > device's music and syncing it again. But save yourself the round trip —
 > once an iPod lives with Syncopation, let it.
 
+## Sync speed
+
+Two things set the pace of a sync: how fast the iPod can take files, and —
+for FLAC — how fast the Mac can convert them. **The older either one is, the
+slower it goes.**
+
+- **What's inside the iPod.** Most click-wheel iPods — mini, photo, video,
+  and every classic — shipped with a small spinning hard drive, and writing
+  thousands of files to one is slow work. An iPod whose drive has been
+  swapped for flash storage (an iFlash board with SD or CF cards, for
+  example) takes music markedly faster; the nano is flash from the factory.
+- **The cable.** These devices are USB 2.0 at best, and the earliest models
+  are slower still. On a plain copy, a modern Mac spends most of the sync
+  waiting on the iPod.
+
+**FLAC libraries take the longest.** An MP3 or M4A is simply copied; a FLAC
+track has to be decoded and re-encoded to Apple Lossless first. That
+conversion runs on the Mac, so **the older the Mac, the slower the
+conversion** — an Intel machine works through a library far more slowly than
+Apple Silicon does. The Mac keeps a few finished tracks ready ahead of the
+transfer, so whichever side is slower sets the pace: an old hard-drive iPod
+can't absorb converted tracks as fast as a modern Mac produces them, and an
+old Mac can't convert them as fast as a flash-modded iPod can take them.
+Either way, a first sync of a large FLAC collection can run for hours.
+Leave it plugged in: the transfer checkpoints as it runs, so an interruption
+costs nothing already copied, and the next sync carries on from there.
+
 ## Support
 
 - **Questions and bug reports:** [open an issue](../../issues) in this
