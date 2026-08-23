@@ -168,7 +168,7 @@ costs nothing already copied, and the next sync carries on from there.
 
 ## Status
 
-**Available on the Mac App Store** — version 1.1, released August 20, 2026.
+**[Available on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498)** — version 1.1, released August 21, 2026.
 
 Working today on real hardware — an iPod classic (7th gen) and an iPod nano
 (3rd gen): device identification, FLAC → ALAC conversion, writing the iPod's

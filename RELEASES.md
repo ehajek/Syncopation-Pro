@@ -16,7 +16,7 @@ for again.
 
 | Edition | Build | Status |
 |---|:---:|---|
-| **Pro 1.1** | 4 | **Mac App Store — released August 20, 2026.** The first Pro release to reach the public; 1.0 and the 1.0.1 repairs ship inside it. |
+| **Pro 1.1** | 4 | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released August 21, 2026.** The first Pro release to reach the public; 1.0 and the 1.0.1 repairs ship inside it. |
 | **CE 1.1** | 3 | **GitHub — released August 20, 2026.** |
 
 ### Added
