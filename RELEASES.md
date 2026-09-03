@@ -30,6 +30,10 @@ than merely copy it, considerably more becomes possible.
   the iPod one at a time or all together. Music dropped in is copied into the
   library, loose tracks filed by their tags. Playback with a Now Playing
   card, and a chip that stays out of the way.
+- **macOS Now Playing** *(Pro)* — the system's Now Playing follows the
+  player: track, cover and position in Control Center and the menu bar. The
+  keyboard's media keys and the buttons on your headphones play, pause, skip
+  and scrub it.
 - **Synco-cair** *(Pro)* — album art and album names, put right. It reads
   what is already there first and leaves complete albums alone; whatever is
   missing a cover, carrying a thumbnail, or wearing the wrong name is looked
@@ -60,6 +64,7 @@ Nothing. Additions only.
 | | **Pro** | **CE** |
 |---|:---:|:---:|
 | Synco-biblio — shelf, wall of covers, playlists, playback, import | ✓ | — |
+| macOS Now Playing — Control Center, menu bar, media keys, headphone buttons | ✓ | — |
 | Synco-cair — album art and album names put right | ✓ | — |
 | Synco-auditoré — five-band equalizer and gain on playback | ✓ | — |
 | Sync one playlist or the whole library | ✓ | — |

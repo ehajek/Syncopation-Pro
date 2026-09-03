@@ -71,7 +71,9 @@ The library as a shelf and as a wall of covers; an album slides out to its
 tracks. Playlists you build and reorder, sent to the iPod one at a time or
 all together. Music dropped in is copied into the library, loose tracks
 filed by their tags. Playback with a Now Playing card, and a chip that stays
-out of the way.
+out of the way. The Mac's own Now Playing follows along — track, cover and
+position in Control Center and the menu bar — and the keyboard's media keys
+and the buttons on your headphones play, pause, skip and scrub it.
 
 ![Synco-biblio — the collection as a shelf, with the Playlists drawer open and the Now Playing card along the bottom](docs/images/biblio-1.2.jpg)
 
@@ -133,6 +135,7 @@ each version repaired and added, release by release:
 | A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
 | Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
 | Library — Synco-biblio: shelf, wall of covers, playlists, playback, import † | ✓ | — |
+| macOS Now Playing — Control Center, menu bar, media keys, headphone buttons † | ✓ | — |
 | Album art & names — Synco-cair † | ✓ | — |
 | Equalizer — Synco-auditoré † | ✓ | — |
 | Sync one playlist or the whole library † | ✓ | — |
