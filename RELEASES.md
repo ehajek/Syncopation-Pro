@@ -12,6 +12,90 @@ for again.
 
 ---
 
+## 1.2.2 · Bibliotek — repairs
+
+| Edition | Build | Status |
+|---|:---:|---|
+| **Pro 1.2.2** | 8 | Built September 3, 2026 — replaces the 1.2 (5) and 1.2.1 (6) submissions. Verified on three cards and a restored iPod; ready for App Store Connect. |
+| **CE** | — | Stays at 1.1. The SD-relevant repairs are being brought over; the iPod-only items don't apply. |
+
+Point releases keep the family name. A run of fixes that all trace back to the
+same afternoon on real hardware: an exFAT card loaded before 1.2, and a
+classic that had been restored down to bare metal.
+
+### Repaired
+
+- **One name, two spellings.** *Issue:* FAT-family cards can't hold `?`, a
+  trailing period, or a trailing space. The macOS exFAT driver that came
+  before the current one stored those as invisible private-use characters,
+  and a library that once crossed such a card carries them. The current
+  driver lists the real character and finds the file by either spelling.
+  Compared literally, one file looked like a stranger to remove and a track
+  to copy — every sync — and with Match Default Source on, the card lost a
+  little more each run. *Repair (1.2.1):* names are compared by what they
+  mean, not how they're spelled, so the card converges.
+- **A changed track couldn't be replaced.** *Issue:* the same driver deletes
+  a file only by the spelling it met first in that session — Finder's if the
+  card was browsed, ours if we wrote it. A track with such a name that had
+  changed in the library (retagged, new art) failed with "couldn't be
+  removed" and stayed old. *Repair (1.2.2):* every delete against a card —
+  the replace step of a copy, Match removals, Erase — offers each spelling of
+  the name and takes whichever the driver honours. Nothing on the card needs
+  erasing; the track is replaced on the next run.
+- **The same song, twice, cleans itself up.** *Issue:* a track that another
+  program (or a past mishap) left on a device a second time was kept forever —
+  Match only removes songs that aren't in your library, and a duplicate still
+  matches one. The only cure was a full erase and re-sync, slow and hard on an
+  ageing drive. *Repair (1.2.2):* at the very start of a sync, before anything
+  is copied or matched, duplicates already on the device are folded to a single
+  copy — the one that matches your library, or the one whose file is actually
+  present. A duplicate is judged by title, artist, album **and** byte size, so
+  a distinct edit that happens to share tags is never mistaken for a twin. On
+  the iPod this covers music, podcasts and audiobooks; on an SD card or MP3
+  player it keeps the copy that sits at its proper library path. No erase.
+- **A restored iPod stops borrowing another's name.** *Issue:* an iPod erased
+  and reinstalled loses the file that names its model, and Syncopation fell
+  back to the last iPod macOS had seen — so a restored classic could show up
+  wearing a nano's name. *Repair (1.2.2):* the model is read from that exact
+  device's own record by its hardware ID, never "the last one seen." When
+  nothing on the device names it, it shows its family — "iPod classic" — and
+  syncs normally; see the [known issue](https://github.com/ehajek/Syncopation-Pro/issues/2)
+  for how to restore the exact model.
+- **An iPod isn't a folder.** *Issue:* the MP3 Player destination list offered
+  the iPod's own volume, which would fill it with loose files the iPod never
+  shows in its menus. *Repair (1.2.2):* iPod volumes are kept out of that list
+  and refused as a plain folder — an iPod belongs in the iPod tab, where it
+  gets a real database.
+- **The picker says so after an eject.** *Issue:* eject a card and the
+  destination field kept quoting a path that no longer existed; an empty iPod
+  slot read like a selection, so a stray click on Sync could aim at nothing.
+  *Repair (1.2.2):* the field becomes a prompt — "Choose a card or folder…",
+  "Choose an iPod…" — in the attention colour, the panel below says what
+  happened, and no iPod is pre-selected when the app opens. The remembered
+  path is kept: reinsert the card and it is the destination again.
+- **Erase tells the truth.** *Issue:* an erase that couldn't remove a folder
+  still reported "Done — erased". *Repair (1.2.1):* it reports how many items
+  went and how many stayed, and the log says why.
+
+### Added
+
+Nothing. Repairs only.
+
+### Pro vs CE at 1.2.2
+
+CE stays at 1.1; these are the repairs that reach the shared engine. The
+iPod-only fixes (naming, the iPod/folder split, in-device iPod de-duplication)
+have nothing to act on in CE.
+
+| | **Pro** | **CE** |
+|---|:---:|:---:|
+| Spelling-aware delete on exFAT cards (replace step) | ✓ | being brought over |
+| Same-song de-duplication on SD / MP3 players | ✓ | being brought over |
+| Erase reports what it could not remove | ✓ | being brought over |
+| Restored-iPod naming, iPod/folder split | ✓ | not applicable |
+
+---
+
 ## 1.2 · Bibliotek · Thecaire · Auditoré — in review
 
 | Edition | Build | Status |
