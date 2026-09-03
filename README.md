@@ -1,17 +1,20 @@
 # Syncopation Pro
 
-**Load music onto classic iPods — no iTunes, no Swinsian, no cloud.**
+**Load music onto classic iPods — no iTunes, no cloud.**
 
 Syncopation Pro is a native macOS app that syncs music straight onto iPods in
-disk mode. Plug in an iPod classic or nano, pick a folder, hit Sync — tracks
-appear on the device, with album art, ready to play the moment you eject.
+disk mode — and, from 1.2, keeps the library itself: a shelf, a wall of
+covers, playlists, playback, an equalizer, and album art and names put right.
+Plug in an iPod classic or nano, pick a folder or a playlist, hit Sync —
+tracks appear on the device, with album art, ready to play the moment you
+eject.
 
 > This repository is the **support and documentation home** for Syncopation
 > Pro. The application itself is proprietary and its source code is not
 > published here. For the free, open-source edition, see the
 > [Syncopation Community Edition](https://github.com/ehajek/Syncopation-Community-Edition).
 
-![Syncopation Pro in iPod mode with an iPod classic verified and ready to sync](docs/images/ipod-mode.png)
+![Syncopation Pro 1.2 — the sync face: Synco-mode set to Music, Sync set to the full library, Destination set to iPod, and the Now Playing card with the Biblio, Cair and Auditoré doors along the bottom](docs/images/sync-face-1.2.jpg)
 
 ## What it does
 
@@ -20,18 +23,21 @@ appear on the device, with album art, ready to play the moment you eject.
   from a built-in table of every iPod ever made, and writes the device's
   native database directly (including the checksummed databases that
   classics and nanos require). Tracks play immediately after eject.
+- **One playlist or all of it** — the Sync control offers the full library
+  or any one playlist; whichever you pick is what lands on the iPod, and
+  Match mirrors the same choice.
 - **FLAC → ALAC conversion** — automatic, using macOS's built-in encoder.
   Output is 16-bit / 44.1–48 kHz, exactly what the devices were built to
   play; hi-res sources are downsampled correctly.
-- **Audiobooks — Synco-pod** — mark a sync as audiobooks and the tracks are
-  filed as what they are: they land in the iPod's own Audiobooks menu,
-  resume where you stopped, and stay out of shuffle. Filing into the menu
-  works on 2007-and-later models (iPod classic, iPod nano 3rd generation
-  on); earlier iPods file everything under Music — the same result Apple's
-  own current tools produce for those devices. DRM-free files only.
-  Podcast filing is in the works.
 - **Album artwork** — covers are extracted from your files, rendered into
   the device's native thumbnail formats, and shown on the iPod.
+- **Podcasts and audiobooks — Synco-pod** — filed as what they are:
+  audiobooks under the iPod's Audiobooks menu, podcasts under Podcasts. They
+  resume where you stopped, stay out of shuffle, and are marked unplayed.
+  Filing into the menus works on 2007-and-later models (iPod classic, iPod
+  nano 3rd generation on); earlier iPods file everything under Music — the
+  same result Apple's own current tools produce for those devices. DRM-free
+  files only; Apple Books and Audible purchases are copy-protected.
 - **Interrupted syncs don't start over** — the iPod's library is saved as the
   transfer runs, not once at the end. Knock the cable out an hour into a big
   sync and you keep everything transferred so far as a working, playable
@@ -45,10 +51,7 @@ appear on the device, with album art, ready to play the moment you eject.
   filled in as you sync.
 - **Safe by design** — existing music and playlists are always preserved,
   every database write keeps a backup on the device, and syncing only adds
-  unless you explicitly ask it to match your source folder.
-- **Podcasts and audiobooks — Synco-pod** — filed as what they are: they
-  resume where you stopped, stay out of shuffle, and are marked unplayed.
-  DRM-free files only; Apple Books and Audible purchases are copy-protected.
+  unless you explicitly ask it to match your source.
 - **Accessibility** — Liquid Glass on macOS 26 and up; window transparency
   and a System, Light, or Dark appearance on every supported macOS, Ventura
   included — each switchable. A sound in your own alert tone when a sync
@@ -56,13 +59,53 @@ appear on the device, with album art, ready to play the moment you eject.
 - **Everything the free version does** — one-way and two-way folder/SD-card
   sync with conflict handling, previews, and per-mode file filtering.
 
-![A live sync converting FLAC to Apple Lossless, with the Debug panel showing device details and the per-file log](docs/images/syncing-debug.png)
+## The library, in one window — new in 1.2
+
+Once an app can see a collection rather than merely copy it, considerably
+more becomes possible — three engines' worth. Three doors sit along the
+bottom of the window: Biblio, Cair, Auditoré.
+
+### Synco-biblio
+
+The library as a shelf and as a wall of covers; an album slides out to its
+tracks. Playlists you build and reorder, sent to the iPod one at a time or
+all together. Music dropped in is copied into the library, loose tracks
+filed by their tags. Playback with a Now Playing card, and a chip that stays
+out of the way.
+
+![Synco-biblio — the collection as a shelf, with the Playlists drawer open and the Now Playing card along the bottom](docs/images/biblio-1.2.jpg)
+
+### Synco-cair
+
+Album art and album names, put right. It reads what is already there first
+and leaves complete albums alone; whatever is missing a cover, carrying a
+thumbnail, or wearing the wrong name is looked up across the free music
+databases. The sure ones fix themselves. The rest line up for one look and
+one click. Audio is never re-encoded. Video files are never touched.
+
+![Synco-cair — the run in progress: albums already complete marked "nothing to change", covers added and an album renamed, each with a before-and-after thumbnail](docs/images/cair-1.2.jpg)
+
+### Synco-auditoré
+
+A five-band equalizer and gain on playback — live while a track plays,
+remembered between launches. It works on the sound as it leaves the app,
+and only there: nothing is written to your files, nothing changes on the
+iPod, and every sync copies the music exactly as it is.
+
+![Synco-auditoré — gain and five octave-wide bands, 60 Hz to 12 kHz, with the equalizer switched on](docs/images/auditore-1.2.jpg)
+
+**Housekeeping.** A Library Scanning screen holds the door while the index
+reads, so nothing runs on a half-read shelf. And a switch in Settings,
+**Prevent Syncopation from Internet Access**, which does exactly that:
+Synco-cair goes dark, and nothing else ever needed the network in the first
+place.
 
 ## Pro vs Community Edition
 
 Same engine, same four modes, same care with the iPod's database. Pro adds
-the things that take a library from *copied* to *kept*. Both editions are
-at 1.1. What each version repaired and added, release by release:
+the things that take a library from *copied* to *kept*. Pro is at 1.2, in
+review; CE is at 1.1 and hasn't been handed the library engines yet. What
+each version repaired and added, release by release:
 [RELEASES.md](RELEASES.md).
 
 | | **Pro** | **CE** |
@@ -86,8 +129,17 @@ at 1.1. What each version repaired and added, release by release:
 | The Mac stays awake while a sync runs | ✓ | ✓ |
 | Space check prices hi-res tracks at their converted size | ✓ | ✓ |
 | Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | ✓ |
+| Podcasts filed to the iPod's own Podcasts menu † | ✓ | — |
 | A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
 | Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
+| Library — Synco-biblio: shelf, wall of covers, playlists, playback, import † | ✓ | — |
+| Album art & names — Synco-cair † | ✓ | — |
+| Equalizer — Synco-auditoré † | ✓ | — |
+| Sync one playlist or the whole library † | ✓ | — |
+| Prevent Syncopation from Internet Access † | ✓ | n/a — nothing in CE reaches the network |
+
+† Arrives with Pro 1.2 — delivered to App Store Connect September 2, 2026;
+in review. A free update for everyone who owns 1.x.
 
 ## Requirements
 
@@ -98,6 +150,8 @@ at 1.1. What each version repaired and added, release by release:
 - An iPod in disk mode: iPod classic (all generations), iPod nano
   (through 4th gen), iPod video, mini, or photo. (iPod touch and iPhone use a
   different sync system and are not supported, nor is the iPod shuffle.)
+- An internet connection only if you use Synco-cair's lookups. Everything
+  else works with the network switched off.
 
 ## Getting your iPod ready
 
@@ -170,11 +224,17 @@ costs nothing already copied, and the next sync carries on from there.
 
 **[Available on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498)** — version 1.1, released August 21, 2026.
 
-Working today on real hardware — an iPod classic (7th gen) and an iPod nano
-(3rd gen): device identification, FLAC → ALAC conversion, writing the iPod's
-native checksummed database, album artwork, checkpointed transfers that
-survive a disconnect, and automatic cleanup of files other software left
-stranded on the device.
+**Version 1.2 — Bibliotek · Thecaire · Auditoré — was delivered to App Store
+Connect on September 2, 2026 and is in review.** It arrives as a free update.
+The running bulletin board, with an RSS feed:
+[synco.uno/dispatches](https://synco.uno/dispatches).
+
+Working today on real hardware — an iPod classic (7th gen) and iPod nanos
+(1st and 3rd gen): device identification, FLAC → ALAC conversion, writing the
+iPod's native checksummed database, album artwork, podcast and audiobook
+filing, checkpointed transfers that survive a disconnect, and automatic
+cleanup of files other software left stranded on the device. The library
+engines run against a 4,500-track collection every day.
 
 ## Pricing
 

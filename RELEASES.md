@@ -12,6 +12,63 @@ for again.
 
 ---
 
+## 1.2 · Bibliotek · Thecaire · Auditoré — in review
+
+| Edition | Build | Status |
+|---|:---:|---|
+| **Pro 1.2** | 5 | **Delivered to App Store Connect September 2, 2026 — in review.** A free update for everyone who owns 1.x. |
+| **CE** | — | Not handed 1.2. CE stays at 1.1. |
+
+Three names under one number because three engines arrived at once.
+Everything you own, in one window: once an app can see a collection rather
+than merely copy it, considerably more becomes possible.
+
+### Added
+
+- **Synco-biblio** *(Pro)* — the library as a shelf and as a wall of covers;
+  an album slides out to its tracks. Playlists you build and reorder, sent to
+  the iPod one at a time or all together. Music dropped in is copied into the
+  library, loose tracks filed by their tags. Playback with a Now Playing
+  card, and a chip that stays out of the way.
+- **Synco-cair** *(Pro)* — album art and album names, put right. It reads
+  what is already there first and leaves complete albums alone; whatever is
+  missing a cover, carrying a thumbnail, or wearing the wrong name is looked
+  up across the free music databases. The sure ones fix themselves; the rest
+  line up for one look and one click. Audio is never re-encoded. Video files
+  are never touched.
+- **Synco-auditoré** *(Pro)* — a five-band equalizer and gain on playback,
+  live while a track plays, remembered between launches. Playback only:
+  nothing is written to files, nothing changes on the iPod.
+- **One playlist or all of it** *(Pro)* — the sync face's source control
+  became a Sync picker: the full library, or any one playlist, to the iPod.
+  Match mirrors whichever is chosen.
+- **Synco-pod, finished** *(Pro)* — podcasts file to the iPod's own Podcasts
+  menu the way audiobooks already did: resuming where you stopped, kept out
+  of shuffle. Tested on the nano.
+- **Library Scanning** *(Pro)* — a screen that holds the door while the
+  index reads, so nothing runs on a half-read shelf.
+- **Prevent Syncopation from Internet Access** *(Pro)* — a switch in
+  Settings that does exactly that. Synco-cair goes dark; nothing else ever
+  needed the network in the first place.
+
+### Repaired
+
+Nothing. Additions only.
+
+### Pro vs CE at 1.2
+
+| | **Pro** | **CE** |
+|---|:---:|:---:|
+| Synco-biblio — shelf, wall of covers, playlists, playback, import | ✓ | — |
+| Synco-cair — album art and album names put right | ✓ | — |
+| Synco-auditoré — five-band equalizer and gain on playback | ✓ | — |
+| Sync one playlist or the whole library | ✓ | — |
+| Podcasts filed to the iPod's Podcasts menu | ✓ | — |
+| Library Scanning screen | ✓ | — |
+| Prevent Syncopation from Internet Access | ✓ | n/a — nothing in CE reaches the network |
+
+---
+
 ## 1.1 · Podification — August 20, 2026
 
 | Edition | Build | Status |

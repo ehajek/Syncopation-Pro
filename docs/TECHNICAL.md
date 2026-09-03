@@ -187,7 +187,7 @@ no embedded cover, are counted and reported; nothing fails.
 ### Stray files, and cleaning them up
 
 Removing a track from an iPod's library does not delete its audio file. Most
-software (including iTunes and Swinsian) leaves the file behind, so drives
+software, iTunes included, leaves the file behind, so drives
 accumulate **orphans**: audio in `iPod_Control/Music` that no database record
 points at. The iPod can't play them and won't show them, but they still
 occupy the disk. A real example: a 160 GB classic under test held 7,118 audio
