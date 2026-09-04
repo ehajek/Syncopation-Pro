@@ -276,7 +276,7 @@ were refused on principle.
 
 - Artwork on pre-2007 iPods — older thumbnail formats, not yet verified
   against hardware; music syncs normally, artwork is skipped.
-- iPod shuffle — detected and refused with a clear message. Not planned.
+- iPod shuffle — detected and refused with a clear message.
 - hash72 / hashAB devices (nano 5G and later, iPod touch, iPhone) — refused.
 
 ### Pro vs CE at 1.0
