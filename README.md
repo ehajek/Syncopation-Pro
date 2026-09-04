@@ -102,48 +102,6 @@ reads, so nothing runs on a half-read shelf. And a switch in Settings,
 Synco-cair goes dark, and nothing else ever needed the network in the first
 place.
 
-## Pro vs Community Edition
-
-Same engine, same four modes, same care with the iPod's database. Pro adds
-the things that take a library from *copied* to *kept*. Pro is at 1.2, in
-review; CE is at 1.1 and hasn't been handed the library engines yet. What
-each version repaired and added, release by release:
-[RELEASES.md](RELEASES.md).
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Four Synco-modes — Music, ePUB/PDF, All Files, iPod | ✓ | ✓ |
-| Native iPod database engine — hash58 checksums, tracks play on eject | ✓ | ✓ |
-| FLAC → Apple Lossless, 16-bit, in-process | ✓ | ✓ |
-| iPod identification | Exact model — "iPod classic (7th gen)" | Family only — "iPod classic" |
-| Album artwork on the iPod | ✓ | — |
-| Skips tracks already on the device | By tags — even ones another app put there | By file |
-| Interrupted sync | Checkpointed — carries on where it stopped | Stops cleanly — tidies up on the next run |
-| Reclaims stray files other software left behind | ✓ | — |
-| Two-way sync for folders and SD cards | ✓ | — |
-| Match Default Source — device mirrors the folder, deletions included | ✓ | — |
-| Preview, Erase, Eject, free-space check | ✓ | ✓ |
-| Debug drawer — device facts and the per-file log | ✓ | ✓ |
-| Accessibility | Liquid Glass (macOS 26 and up); transparency, System, Light, Dark mode on every supported macOS, Ventura included — each switchable | System, Light, Dark mode — flat |
-| Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
-| Price | $19.99, once | Free, GPL v3 |
-| Conversion runs ahead of the copy — a faster first sync | ✓ | ✓ |
-| The Mac stays awake while a sync runs | ✓ | ✓ |
-| Space check prices hi-res tracks at their converted size | ✓ | ✓ |
-| Synco-pod — podcasts and audiobooks filed as such: resume position, kept out of shuffle, unplayed flag | ✓ | ✓ |
-| Podcasts filed to the iPod's own Podcasts menu † | ✓ | — |
-| A sound when a sync finishes, in your own alert tone | ✓ | ✓ |
-| Match Default Source removes items — episodes and books included, not just songs | ✓ | — |
-| Library — Synco-biblio: shelf, wall of covers, playlists, playback, import † | ✓ | — |
-| macOS Now Playing — Control Center, menu bar, media keys, headphone buttons † | ✓ | — |
-| Album art & names — Synco-cair † | ✓ | — |
-| Equalizer — Synco-auditoré † | ✓ | — |
-| Sync one playlist or the whole library † | ✓ | — |
-| Prevent Syncopation from Internet Access † | ✓ | n/a — nothing in CE reaches the network |
-
-† Arrives with Pro 1.2 — delivered to App Store Connect September 2, 2026;
-in review. A free update for everyone who owns 1.x.
-
 ## Requirements
 
 - macOS 13 (Ventura) or later — Intel or Apple Silicon. On macOS 26 and later
@@ -225,10 +183,8 @@ costs nothing already copied, and the next sync carries on from there.
 
 ## Status
 
-**[Available on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498)** — version 1.1, released August 21, 2026.
-
-**Version 1.2 — Bibliotek · Thecaire · Auditoré — was delivered to App Store
-Connect on September 2, 2026 and is in review.** It arrives as a free update.
+Version 1.1 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
+released August 21, 2026. Version 1.2.2 was submitted on September 3, 2026.
 The running bulletin board, with an RSS feed:
 [synco.uno/dispatches](https://synco.uno/dispatches).
 
@@ -238,11 +194,6 @@ iPod's native checksummed database, album artwork, podcast and audiobook
 filing, checkpointed transfers that survive a disconnect, and automatic
 cleanup of files other software left stranded on the device. The library
 engines run against a 4,500-track collection every day.
-
-## Pricing
-
-**$19.99, once.** Every 1.x update is included in that sentence — there is
-no subscription.
 
 ---
 

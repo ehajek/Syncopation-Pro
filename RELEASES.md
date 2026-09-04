@@ -1,7 +1,6 @@
 # Syncopation — Releases
 
-What each version repaired, what it added, and how the two editions compare
-at that version. Newest first. Codenames are project names; the product is
+What each version repaired and what it added. Newest first. Codenames are project names; the product is
 Syncopation. The running bulletin board, with an RSS feed, is
 [synco.uno/dispatches](https://synco.uno/dispatches).
 
@@ -81,31 +80,14 @@ classic that had been restored down to bare metal.
 
 Nothing. Repairs only.
 
-### Pro vs CE at 1.2.2
-
-CE moves to 1.2.2 with this release, skipping 1.2 — the three faces that
-number is named for are Pro's. From here CE is built from Pro's own source
-with the Pro-only features removed, so the shared engine is literally shared.
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Spelling-aware delete on exFAT cards (replace step and Erase) | ✓ | ✓ |
-| Same-song de-duplication — cards and iPod | ✓ | ✓ |
-| Reclaim space from files other software left behind | ✓ | ✓ |
-| "Choose a card or folder…" after an eject; no iPod pre-selected | ✓ | ✓ |
-| iPod kept out of the folder picker | ✓ | ✓ |
-| Erase reports what it could not remove | ✓ | ✓ |
-| Restored-iPod naming by hardware ID | ✓ | not applicable |
-| Biblio, Cair, Auditoré; iPod artwork; Match; two-way sync | ✓ | — |
-
 ---
 
-## 1.2 · Bibliotek · Thecaire · Auditoré — in review
+## 1.2 · Bibliotek · Thecaire · Auditoré
 
 | Edition | Build | Status |
 |---|:---:|---|
-| **Pro 1.2** | 5 | **Delivered to App Store Connect September 2, 2026 — in review.** A free update for everyone who owns 1.x. |
-| **CE** | — | Not handed 1.2. CE stays at 1.1. |
+| **Pro 1.2** | 5 | Delivered to App Store Connect September 2, 2026; superseded by 1.2.2. |
+| **CE** | — | 1.2 is Pro-only; CE went from 1.1 to 1.2.2. |
 
 Three names under one number because three engines arrived at once.
 Everything you own, in one window: once an app can see a collection rather
@@ -147,19 +129,6 @@ than merely copy it, considerably more becomes possible.
 
 Nothing. Additions only.
 
-### Pro vs CE at 1.2
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Synco-biblio — shelf, wall of covers, playlists, playback, import | ✓ | — |
-| macOS Now Playing — Control Center, menu bar, media keys, headphone buttons | ✓ | — |
-| Synco-cair — album art and album names put right | ✓ | — |
-| Synco-auditoré — five-band equalizer and gain on playback | ✓ | — |
-| Sync one playlist or the whole library | ✓ | — |
-| Podcasts filed to the iPod's Podcasts menu | ✓ | — |
-| Library Scanning screen | ✓ | — |
-| Prevent Syncopation from Internet Access | ✓ | n/a — nothing in CE reaches the network |
-
 ---
 
 ## 1.1 · Podification — August 20, 2026
@@ -199,17 +168,6 @@ Nothing. Additions only.
 - **Pro also carries every 1.0.1 repair below.** They never shipped on their
   own number.
 
-### Pro vs CE at 1.1
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Synco-pod — podcasts and audiobooks filed as such | ✓ | ✓ |
-| Appearance — system, light, or dark | ✓ | ✓ |
-| Liquid Glass and window transparency switchable off | ✓ | n/a — already flat |
-| A sound when a sync finishes | ✓ | ✓ |
-| One control language | ✓ | ✓ |
-| Match Default Source removes items, not just songs | ✓ | — |
-
 ---
 
 ## 1.0.1 · Origen — repairs
@@ -242,14 +200,6 @@ ready; features make the trip on their own schedule.
 
 Nothing. Repairs only.
 
-### Pro vs CE at 1.0.1
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Conversion pipelined ahead of the copy | ✓ | ✓ |
-| The Mac stays awake while a sync runs | ✓ | ✓ |
-| Space check prices hi-res tracks at their converted size | ✓ | ✓ |
-
 ---
 
 ## 1.0 · Origen
@@ -278,26 +228,6 @@ were refused on principle.
   hardware; music syncs normally, artwork is skipped.
 - iPod shuffle — detected and refused with a clear message.
 - hash72 / hashAB devices (nano 5G and later, iPod touch, iPhone) — refused.
-
-### Pro vs CE at 1.0
-
-| | **Pro** | **CE** |
-|---|:---:|:---:|
-| Four Synco-modes — Music, ePUB/PDF, All Files, iPod | ✓ | ✓ |
-| Native iPod database engine — hash58 checksums, tracks play on eject | ✓ | ✓ |
-| FLAC → Apple Lossless, 16-bit, in-process | ✓ | ✓ |
-| iPod identification | Exact model — "iPod classic (7th gen)" | Family only — "iPod classic" |
-| Album artwork on the iPod | ✓ | — |
-| Skips tracks already on the device | By tags — even ones another app put there | By file |
-| Interrupted sync | Checkpointed — carries on where it stopped | Stops cleanly — tidies up on the next run |
-| Reclaims stray files other software left behind | ✓ | — |
-| Two-way sync for folders and SD cards | ✓ | — |
-| Match Default Source — device mirrors the folder, deletions included | ✓ | — |
-| Preview, Erase, Eject, free-space check | ✓ | ✓ |
-| Debug drawer — device facts and the per-file log | ✓ | ✓ |
-| Interface | Liquid Glass on macOS 26, native controls on 13–15 | Flat, native |
-| Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
-| Price | $19.99, once | Free, GPL v3 |
 
 ---
 
