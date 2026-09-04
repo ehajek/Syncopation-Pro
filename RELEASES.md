@@ -17,7 +17,7 @@ for again.
 | Edition | Build | Status |
 |---|:---:|---|
 | **Pro 1.2.2** | 8 | Built September 3, 2026 — replaces the 1.2 (5) and 1.2.1 (6) submissions. Verified on three cards and a restored iPod; ready for App Store Connect. |
-| **CE** | — | Stays at 1.1. The SD-relevant repairs are being brought over; the iPod-only items don't apply. |
+| **CE 1.2.2** | 4 | **GitHub — September 3, 2026.** Rebuilt on this same engine with the Pro-only features removed, so the editions stop drifting apart. |
 
 Point releases keep the family name. A run of fixes that all trace back to the
 same afternoon on real hardware: an exFAT card loaded before 1.2, and a
@@ -83,16 +83,20 @@ Nothing. Repairs only.
 
 ### Pro vs CE at 1.2.2
 
-CE stays at 1.1; these are the repairs that reach the shared engine. The
-iPod-only fixes (naming, the iPod/folder split, in-device iPod de-duplication)
-have nothing to act on in CE.
+CE moves to 1.2.2 with this release, skipping 1.2 — the three faces that
+number is named for are Pro's. From here CE is built from Pro's own source
+with the Pro-only features removed, so the shared engine is literally shared.
 
 | | **Pro** | **CE** |
 |---|:---:|:---:|
-| Spelling-aware delete on exFAT cards (replace step) | ✓ | being brought over |
-| Same-song de-duplication on SD / MP3 players | ✓ | being brought over |
-| Erase reports what it could not remove | ✓ | being brought over |
-| Restored-iPod naming, iPod/folder split | ✓ | not applicable |
+| Spelling-aware delete on exFAT cards (replace step and Erase) | ✓ | ✓ |
+| Same-song de-duplication — cards and iPod | ✓ | ✓ |
+| Reclaim space from files other software left behind | ✓ | ✓ |
+| "Choose a card or folder…" after an eject; no iPod pre-selected | ✓ | ✓ |
+| iPod kept out of the folder picker | ✓ | ✓ |
+| Erase reports what it could not remove | ✓ | ✓ |
+| Restored-iPod naming by hardware ID | ✓ | not applicable |
+| Biblio, Cair, Auditoré; iPod artwork; Match; two-way sync | ✓ | — |
 
 ---
 
