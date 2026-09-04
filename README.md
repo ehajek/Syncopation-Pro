@@ -126,7 +126,7 @@ each version repaired and added, release by release:
 | Debug drawer — device facts and the per-file log | ✓ | ✓ |
 | Accessibility | Liquid Glass (macOS 26 and up); transparency, System, Light, Dark mode on every supported macOS, Ventura included — each switchable | System, Light, Dark mode — flat |
 | Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
-| Price | $19.99 once; $24.99 from January 1, 2027 | Free, GPL v3 |
+| Price | $19.99, once | Free, GPL v3 |
 | Conversion runs ahead of the copy — a faster first sync | ✓ | ✓ |
 | The Mac stays awake while a sync runs | ✓ | ✓ |
 | Space check prices hi-res tracks at their converted size | ✓ | ✓ |
@@ -241,9 +241,8 @@ engines run against a 4,500-track collection every day.
 
 ## Pricing
 
-**$19.99, once,** through December 31, 2026. From January 1, 2027 the price
-is **$24.99**. Either way, every 1.x update is included in that sentence —
-there is no subscription.
+**$19.99, once.** Every 1.x update is included in that sentence — there is
+no subscription.
 
 ---
 

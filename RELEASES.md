@@ -16,7 +16,7 @@ for again.
 
 | Edition | Build | Status |
 |---|:---:|---|
-| **Pro 1.2.2** | 8 | Built September 3, 2026 — replaces the 1.2 (5) and 1.2.1 (6) submissions. Verified on three cards and a restored iPod; ready for App Store Connect. |
+| **Pro 1.2.2** | 8 | Submitted to the Mac App Store, September 3, 2026 — replaces the 1.2 (5) and 1.2.1 (6) submissions. Verified on three cards and a restored iPod. |
 | **CE 1.2.2** | 4 | **GitHub — September 3, 2026.** Rebuilt on this same engine with the Pro-only features removed, so the editions stop drifting apart. |
 
 Point releases keep the family name. A run of fixes that all trace back to the
@@ -274,8 +274,8 @@ were refused on principle.
 
 ### Not supported
 
-- Artwork on pre-2007 iPods — older thumbnail formats, not yet verified
-  against hardware; music syncs normally, artwork is skipped.
+- Artwork on pre-2007 iPods — older thumbnail formats, unverified against
+  hardware; music syncs normally, artwork is skipped.
 - iPod shuffle — detected and refused with a clear message.
 - hash72 / hashAB devices (nano 5G and later, iPod touch, iPhone) — refused.
 
@@ -297,7 +297,7 @@ were refused on principle.
 | Debug drawer — device facts and the per-file log | ✓ | ✓ |
 | Interface | Liquid Glass on macOS 26, native controls on 13–15 | Flat, native |
 | Distribution | Mac App Store — sandboxed, notarized, reviewed | GitHub — clone it, build it |
-| Price | $19.99 once; $24.99 from January 1, 2027 | Free, GPL v3 |
+| Price | $19.99, once | Free, GPL v3 |
 
 ---
 
