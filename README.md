@@ -85,6 +85,11 @@ thumbnail, or wearing the wrong name is looked up across the free music
 databases. The sure ones fix themselves. The rest line up for one look and
 one click. Audio is never re-encoded. Video files are never touched.
 
+New in 1.2.2, Cair organizes as well: every track is identified and filed
+into its real Artist / Album folder, with the album, artist, title, track and
+disc numbers, genre, year and cover all put right — the sure ones on their
+own, the rest with one click. File formats are preserved.
+
 ![Synco-cair — the run in progress: albums already complete marked "nothing to change", covers added and an album renamed, each with a before-and-after thumbnail](docs/images/cair-1.2.jpg)
 
 ### Synco-auditoré
@@ -183,8 +188,8 @@ costs nothing already copied, and the next sync carries on from there.
 
 ## Status
 
-Version 1.1 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
-released August 21, 2026. Version 1.2.2 was submitted on September 3, 2026.
+Version 1.2.2 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
+released September 14, 2026.
 The running bulletin board, with an RSS feed:
 [synco.uno/dispatches](https://synco.uno/dispatches).
 

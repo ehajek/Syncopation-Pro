@@ -11,12 +11,12 @@ for again.
 
 ---
 
-## 1.2.2 · Bibliotek — repairs
+## 1.2.2 · Bibliotek — repairs and organize
 
-| Edition | Build | Status |
-|---|:---:|---|
-| **Pro 1.2.2** | 8 | Submitted to the Mac App Store, September 3, 2026 — replaces the 1.2 (5) and 1.2.1 (6) submissions. Verified on three cards and a restored iPod. |
-| **CE 1.2.2** | 4 | **GitHub — September 3, 2026.** Rebuilt on this same engine with the Pro-only features removed, so the editions stop drifting apart. |
+| Edition | Status |
+|---|---|
+| **Pro 1.2.2** | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released September 14, 2026.** Replaces the 1.2 and 1.2.1 submissions; adds Cair's per-track organize. Verified on three cards and a restored iPod. |
+| **CE 1.2.2** | **GitHub — September 3, 2026.** Rebuilt on this same engine with the Pro-only features removed, so the editions stop drifting apart. |
 
 Point releases keep the family name. A run of fixes that all trace back to the
 same afternoon on real hardware: an exFAT card loaded before 1.2, and a
@@ -84,10 +84,10 @@ Nothing. Repairs only.
 
 ## 1.2 · Bibliotek · Thecaire · Auditoré
 
-| Edition | Build | Status |
-|---|:---:|---|
-| **Pro 1.2** | 5 | Delivered to App Store Connect September 2, 2026; superseded by 1.2.2. |
-| **CE** | — | 1.2 is Pro-only; CE went from 1.1 to 1.2.2. |
+| Edition | Status |
+|---|---|
+| **Pro 1.2** | Delivered to App Store Connect September 2, 2026; superseded by 1.2.2. |
+| **CE** | 1.2 is Pro-only; CE went from 1.1 to 1.2.2. |
 
 Three names under one number because three engines arrived at once.
 Everything you own, in one window: once an app can see a collection rather
@@ -133,10 +133,10 @@ Nothing. Additions only.
 
 ## 1.1 · Podification — August 20, 2026
 
-| Edition | Build | Status |
-|---|:---:|---|
-| **Pro 1.1** | 4 | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released August 21, 2026.** The first Pro release to reach the public; 1.0 and the 1.0.1 repairs ship inside it. |
-| **CE 1.1** | 3 | **GitHub — released August 20, 2026.** |
+| Edition | Status |
+|---|---|
+| **Pro 1.1** | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released August 21, 2026.** The first Pro release to reach the public; 1.0 and the 1.0.1 repairs ship inside it. |
+| **CE 1.1** | **GitHub — released August 20, 2026.** |
 
 ### Added
 
@@ -172,10 +172,10 @@ Nothing. Additions only.
 
 ## 1.0.1 · Origen — repairs
 
-| Edition | Build | Status |
-|---|:---:|---|
-| **Pro 1.0.1** | 3 | Rolled up into 1.1 — never shipped on its own number. |
-| **CE 1.0.1** | 2 | **GitHub — released August 16, 2026.** |
+| Edition | Status |
+|---|---|
+| **Pro 1.0.1** | Rolled up into 1.1 — never shipped on its own number. |
+| **CE 1.0.1** | **GitHub — released August 16, 2026.** |
 
 Point releases keep the family name. Repairs cross editions when they're
 ready; features make the trip on their own schedule.
@@ -204,10 +204,10 @@ Nothing. Repairs only.
 
 ## 1.0 · Origen
 
-| Edition | Build | Status |
-|---|:---:|---|
-| **Pro 1.0** | 2 | Submitted to App Review August 11, 2026; rolled up into 1.1. |
-| **CE 1.0** | 1 | **GitHub — released August 8, 2026.** Codename assigned in retrospect. |
+| Edition | Status |
+|---|---|
+| **Pro 1.0** | Submitted to App Review August 11, 2026; rolled up into 1.1. |
+| **CE 1.0** | **GitHub — released August 8, 2026.** Codename assigned in retrospect. |
 
 ### Added
 
