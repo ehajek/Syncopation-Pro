@@ -250,17 +250,42 @@ Hi-res rates are halved to stay legal (88.2/176.4 → 44.1, 96/192 → 48).
 This costs nothing audible: the iPod truncates to 16-bit anyway, and the
 24-bit masters stay untouched at the source.
 
-Formats copied as-is: MP3, M4A/AAC, M4B, WAV, AIFF. Formats the firmware
-can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
+Formats copied as-is: MP3, M4A/AAC, M4B. Converted to 16-bit Apple Lossless:
+FLAC, WAV and AIFF (from 1.3 — WAV and AIFF used to be copied). Formats the
+firmware can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
 
-**Two decoders, because one isn't enough.** Conversion normally runs through
-AVFoundation, but that reader validates a FLAC's *seektable* when opening the
-file and rejects the whole thing with `'dta?'` (unsupported data format) if it
-disapproves — before decoding a single frame, and regardless of the audio being
-perfectly fine. Encountered in the wild: one track in a 4,541-file library
-failed while its neighbours, identical in sample rate, bit depth and block
-size, converted without trouble. Removing only the seektable made AVFoundation
-accept it.
+**The WAV rule (measured on an iPod nano 3G and an iPod shuffle 4G;
+identical results on both).** A 16-file scale set — each file announcing its
+own specification, then playing a C-major scale — established what these iPods
+actually play when handed a WAV:
+
+| Plays | Skipped silently |
+|---|---|
+| standard PCM header (format tag 1) | WAVE_FORMAT_EXTENSIBLE header (tag 0xFFFE), even at 16-bit/44.1 |
+| 8-bit or 16-bit | 24-bit (any header), 32-bit integer, 32-bit float |
+| 48 kHz or below | every rate above 48 kHz |
+| mono or stereo | — |
+
+A file outside that set produces no sound and no error — the firmware simply
+moves on. Core Audio reports a standard and an extensible header identically,
+so the `fmt ` chunk has to be read directly to tell them apart. That is why
+WAV joined FLAC in the converter instead of staying a copy: the only WAVs that
+were safe to copy were the ones that happen to fall inside the table's left
+column.
+
+**One decoder: Core Audio's file API.** Conversion runs through
+`ExtAudioFile`, the same code `afconvert` uses, and nothing else. The earlier
+AVFoundation reader had to go: it validates a FLAC's *seektable* when opening
+the file and rejects the whole thing with `'dta?'` (unsupported data format)
+if it disapproves — before decoding a single frame, and regardless of the
+audio being perfectly fine. Encountered in the wild: one track in a 4,541-file
+library failed while its neighbours, identical in sample rate, bit depth and
+block size, converted without trouble; removing only the seektable made it
+open. Core Audio decodes that same file without complaint, and — more to the
+point — it writes the container every iPod plays, including a shuffle, whose
+firmware refuses an AVFoundation-boxed MPEG-4 outright on the strength of its
+named audio handler. A file Core Audio cannot decode is reported and
+skipped.
 
 So a failure falls back to the older CoreAudio file API (`ExtAudioFile`) — the
 same one `afconvert` uses, which ignores seektables entirely and decodes such
@@ -305,10 +330,33 @@ Nothing in the app needs to handle that case.
   formats that haven't been verified against hardware, so artwork is skipped
   there (music syncs normally). The formats each device accepts are listed in
   its `SysInfoExtended` → `ImageSpecifications`.
-- **iPod shuffle** — not supported. Shuffles store their
-  library in `iTunesSD` rather than `iTunesDB`; they are detected and refused
-  with a clear message rather than failing partway through a sync.
+- **iPod shuffle, 1st and 2nd generation** — not supported. They use the
+  older 3-byte `iTunesSD` layout, not the `bdhs` layout the 3rd and 4th
+  generations share. Detected and refused with a clear message rather than
+  failing partway through a sync. The **3rd generation** is refused for a
+  different reason: it shares the 4th's format but has not been verified
+  against hardware. The **4th generation** is supported from 1.3 — see below.
 - **hash72/hashAB devices** (nano 5G+, iPod touch, iPhone) — refused.
+
+## The iTunesSD (iPod shuffle, 4th generation)
+
+A shuffle's firmware never reads an iTunesDB. It plays from `iTunesSD`, a flat
+little-endian file: a `bdhs` header carrying the track and playlist counts,
+then one fixed-size `bdit` record per track — start offset, a one-byte format
+code (1 MP3, 2 MPEG-4 box including .m4b, 4 WAV, 5 Apple Lossless), stop time,
+bookmark, shuffle and resume flags, sample count and a 64-bit id — then
+playlists typed as All Songs, Audiobooks or Podcasts. A companion
+`iTunesStats` carries play counts back.
+
+Having no screen, the device speaks instead: track and playlist names come
+from short spoken clips stored under `iPod_Control/Speakable`, recorded on the
+Mac with the system speech synthesizer in a voice chosen in Settings. The
+firmware's own status messages are recorded the same way, so one voice speaks
+everything. Nothing is sent anywhere to produce them — synthesis is local.
+
+The layout Syncopation writes was verified byte for byte against a list
+Apple's own software wrote on a 4th-generation shuffle, which corrects the
+published references in several fields.
 
 ## References
 

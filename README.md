@@ -26,9 +26,12 @@ eject.
 - **One playlist or all of it** — the Sync control offers the full library
   or any one playlist; whichever you pick is what lands on the iPod, and
   Match mirrors the same choice.
-- **FLAC → ALAC conversion** — automatic, using macOS's built-in encoder.
-  Output is 16-bit / 44.1–48 kHz, exactly what the devices were built to
-  play; hi-res sources are downsampled correctly.
+- **FLAC, WAV and AIFF → ALAC conversion** — automatic, using macOS's
+  built-in encoder. Output is 16-bit / 44.1–48 kHz, exactly what the devices
+  were built to play; hi-res sources are downsampled correctly. MP3, AAC and
+  Apple Lossless are copied untouched. (In 1.3: WAV and AIFF used to be copied
+  as-is, which only works for a narrow set of them — see the WAV rule in
+  [`docs/TECHNICAL.md`](docs/TECHNICAL.md).)
 - **Album artwork** — covers are extracted from your files, rendered into
   the device's native thumbnail formats, and shown on the iPod.
 - **Podcasts and audiobooks — Synco-pod** — filed as what they are:
@@ -114,8 +117,15 @@ place.
   to standard native controls automatically. Window transparency and the
   System / Light / Dark appearance work on every supported version.
 - An iPod in disk mode: iPod classic (all generations), iPod nano
-  (through 4th gen), iPod video, mini, or photo. (iPod touch and iPhone use a
-  different sync system and are not supported, nor is the iPod shuffle.)
+  (through 4th gen), iPod video, mini, photo, or — from 1.3 — iPod shuffle
+  (4th generation). (iPod touch and iPhone use a different sync system and are
+  not supported; nor are iPod nano 5th generation and later, or iPod shuffle
+  1st–3rd generation. The 3rd-generation shuffle shares the 4th's list format
+  but has not been verified against hardware, so it is refused rather than
+  guessed at.)
+- A player running Rockbox syncs as an MP3 Player, not an iPod: it carries no
+  Apple library, so files land in the library's own folder layout and the
+  firmware's own hidden files are left alone.
 - An internet connection only if you use Synco-cair's lookups. Everything
   else works with the network switched off.
 
@@ -189,12 +199,16 @@ costs nothing already copied, and the next sync carries on from there.
 ## Status
 
 Version 1.2.2 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
-released September 14, 2026.
+released September 14, 2026. Version 1.3 "Shufflé" — the iPod shuffle (4th
+generation), Rockbox players as MP3 Players, and one audio converter for every
+iPod — is built and in testing; it is not released yet, and this page describes
+what it does rather than announcing a date.
 The running bulletin board, with an RSS feed:
 [synco.uno/dispatches](https://synco.uno/dispatches).
 
-Working today on real hardware — an iPod classic (7th gen) and iPod nanos
-(1st and 3rd gen): device identification, FLAC → ALAC conversion, writing the
+Working today on real hardware — an iPod classic (7th gen), iPod nanos
+(1st and 3rd gen) and an iPod shuffle (4th gen): device identification,
+FLAC / WAV / AIFF → ALAC conversion, spoken track names on a shuffle, writing the
 iPod's native checksummed database, album artwork, podcast and audiobook
 filing, checkpointed transfers that survive a disconnect, and automatic
 cleanup of files other software left stranded on the device. The library
@@ -202,6 +216,6 @@ engines run against a 4,500-track collection every day.
 
 ---
 
-Copyright © 2026 Eddie Hajek. All rights reserved.
+Copyright © 2026 EJ Hajek. All rights reserved.
 Syncopation Pro is proprietary software. iPod is a trademark of Apple Inc.;
 this product is not affiliated with or endorsed by Apple.
