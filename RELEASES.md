@@ -11,6 +11,91 @@ for again.
 
 ---
 
+## 1.3.1 · Shufflé — one cover per album, and Cair hears the album
+
+| Edition | Status |
+|---|---|
+| **Pro 1.3.1** | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released October 22, 2026.** A point release to 1.3. |
+| **CE** | Pro-only; CE stays at 1.2.2. |
+
+Two changes, both about the album.
+
+### Added
+
+- **One cover per album on the iPod classic.** A click-wheel iPod draws a
+  new Cover Flow cover whenever the Artist or Album text changes between
+  neighbouring tracks, letter for letter, and it never reads Album Artist —
+  so a guest credit or a stray capital gave one album two covers. Syncopation
+  now writes the Sort Artist and Sort Album fields and the compilation flag
+  the firmware groups by, worked out from the album itself; the display tags
+  are untouched. An iPod synced before 1.3.1 is rewritten once at its next
+  sync, with no files copied. Measured on a 4,636-track classic: 994 covers
+  became 816, for 824 albums.
+- **Synco-cair decides the album, not the song.** Cair used to name songs one
+  at a time and file each where it stood. Now it hears every track in a
+  folder, then decides the folder once: filed as that album, offered as one
+  review row when it only looks like that album, or left as it is. A disc set
+  comes together as one album. A track by another act is moved out; a track
+  that belongs stays. An album an older organizer scattered across artist
+  folders is rejoined. Act and album names are spelled the way the store
+  spells them today.
+- **Fewer questions, the same answer every run.** On a 5,700-track test
+  library the held rows fell from 2,687 to 130, and the 130 are real
+  questions: sound-alike mixes, true duplicates, other editions. Runs are
+  deterministic — the same library gives the same result every time.
+
+### Repaired
+
+- **A partial album keeps its own name**, not a deluxe edition's.
+- **One-letter album names are albums.** They are no longer treated as
+  missing.
+- **Apply on a duplicate keeps both**, numbered.
+
+---
+
+## 1.3 · Shufflé — the iPod shuffle and Rockbox
+
+| Edition | Status |
+|---|---|
+| **Pro 1.3** | **[Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498) — released September 21, 2026.** |
+| **CE** | 1.3 is Pro-only; CE stays at 1.2.2. |
+
+The one iPod Syncopation always turned away, let in.
+
+### Added
+
+- **iPod shuffle, 4th generation.** A shuffle plays from a list of its own,
+  `iTunesSD`, rather than the database every other click-wheel iPod uses, so
+  it has a writer of its own — checked byte for byte against the list Finder
+  writes. It has no screen, so it speaks: track names and its own status
+  messages, recorded on the Mac, offline, in a voice chosen in Settings →
+  Shuffle VoiceOver from the voices installed for the system language. The
+  whole library goes on, or one Biblio playlist becomes the shuffle's list,
+  in playlist order. No artwork. The 1st–3rd generations are refused.
+- **Rockbox players** are synced as MP3 players. Music files are managed as
+  expected.
+- **One converter for every iPod.** FLAC, WAV and AIFF all become 16-bit
+  Apple Lossless through one Core Audio pipeline. WAV and AIFF used to be
+  copied as-is, which only works for a narrow set of them — see the WAV rule
+  in [`docs/TECHNICAL.md`](docs/TECHNICAL.md).
+- **Synco-cair** listens further into a song, where the music is, and tries a
+  second window before giving up. Held rows say which source to believe
+  first.
+- **Settings by mode** — General, Biblio, Cair — and a **Getting Started**
+  sheet under Help.
+
+### Repaired
+
+- **The library index reads fast on any Mac**, Intel included.
+- **Covers finish what they start.** A match confirmed after the run gets its
+  cover too, and the covers bar closes when the last one lands.
+- **Match asks once.** It no longer asks about removals on every sync.
+- **Erase leaves a player's hidden files alone**, so a Rockbox firmware
+  folder survives.
+- **An empty destination says so.**
+
+---
+
 ## 1.2.2 · Bibliotek — repairs and organize
 
 | Edition | Status |

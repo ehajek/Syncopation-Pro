@@ -33,7 +33,9 @@ eject.
   as-is, which only works for a narrow set of them — see the WAV rule in
   [`docs/TECHNICAL.md`](docs/TECHNICAL.md).)
 - **Album artwork** — covers are extracted from your files, rendered into
-  the device's native thumbnail formats, and shown on the iPod.
+  the device's native thumbnail formats, and shown on the iPod. One Cover
+  Flow cover per album: every track carries the sort fields the firmware
+  groups by, so a guest credit no longer splits an album in two.
 - **Podcasts and audiobooks — Synco-pod** — filed as what they are:
   audiobooks under the iPod's Audiobooks menu, podcasts under Podcasts. They
   resume where you stopped, stay out of shuffle, and are marked unplayed.
@@ -92,6 +94,12 @@ New in 1.2.2, Cair organizes as well: every track is identified and filed
 into its real Artist / Album folder, with the album, artist, title, track and
 disc numbers, genre, year and cover all put right — the sure ones on their
 own, the rest with one click. File formats are preserved.
+
+From 1.3.1, Cair decides the album, not the song: it hears every track in a
+folder, then files the folder as that album, offers it as one review row when
+it only looks like that album, or leaves it as it is. Disc sets come together,
+strays by another act are moved out, and an album scattered across artist
+folders is rejoined.
 
 ![Synco-cair — the run in progress: albums already complete marked "nothing to change", covers added and an album renamed, each with a before-and-after thumbnail](docs/images/cair-1.2.jpg)
 
@@ -198,11 +206,11 @@ costs nothing already copied, and the next sync carries on from there.
 
 ## Status
 
-Version 1.2.2 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
-released September 14, 2026. Version 1.3 "Shufflé" — the iPod shuffle (4th
-generation), Rockbox players as MP3 Players, and one audio converter for every
-iPod — is built and in testing; it is not released yet, and this page describes
-what it does rather than announcing a date.
+Version 1.3.1 is [on the Mac App Store](https://apps.apple.com/app/syncopation-pro/id6800440498),
+released October 22, 2026: one Cover Flow cover per album on the iPod classic,
+and Synco-cair deciding the album rather than the song. It follows 1.3
+"Shufflé" — the iPod shuffle (4th generation), Rockbox players as MP3 Players,
+and one audio converter for every iPod — released September 21, 2026.
 The running bulletin board, with an RSS feed:
 [synco.uno/dispatches](https://synco.uno/dispatches).
 
