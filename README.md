@@ -136,6 +136,10 @@ place.
   firmware's own hidden files are left alone.
 - An internet connection only if you use Synco-cair's lookups. Everything
   else works with the network switched off.
+- For Synco-cair to identify a song by its sound, the Mac must be signed in
+  to an Apple Account — the same sign-in iCloud and the App Store use — and
+  macOS asks once for Media & Apple Music access. Signed out, Cair still
+  consults the public music databases, but nothing is identified by sound.
 
 ## Getting your iPod ready
 

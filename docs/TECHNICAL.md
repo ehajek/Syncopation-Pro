@@ -247,12 +247,25 @@ afconvert -f m4af -d alac         tmp.wav  out.m4a
 ```
 
 Hi-res rates are halved to stay legal (88.2/176.4 → 44.1, 96/192 → 48).
-This costs nothing audible: the iPod truncates to 16-bit anyway, and the
-24-bit masters stay untouched at the source.
+This costs nothing audible: the iPod plays 16-bit at most, and the 24-bit
+masters stay untouched at the source. From 1.4 the step down to 16-bit is
+dithered (TPDF) rather than cut.
 
-Formats copied as-is: MP3, M4A/AAC, M4B. Converted to 16-bit Apple Lossless:
-FLAC, WAV and AIFF (from 1.3 — WAV and AIFF used to be copied). Formats the
-firmware can't play are skipped and reported: OGG, Opus, WMA, APE, DSF, DFF.
+Formats copied as-is: MP3, M4A/AAC, M4B, and Apple Lossless at 16-bit, 48 kHz
+or below. Converted to 16-bit Apple Lossless: FLAC, WAV and AIFF (from 1.3 —
+WAV and AIFF used to be copied), and from 1.4 Apple Lossless above 16-bit or
+48 kHz. With Settings → Output at AAC 256, every lossless file goes as AAC
+256 kbps instead; a lossy file is never re-encoded. Ogg and Opus stay on the
+Mac.
+
+From 1.4 an iPod never gets more than 16-bit, 48 kHz, whatever the setting:
+the plan never sends more, and each file is checked again just before it
+lands. A lossy file above 48 kHz stays on the Mac rather than being
+re-encoded. An iPod too old for Apple Lossless takes WAV and AIFF as they
+are at CD quality and brought down to 16-bit above it. No DRM files: a
+protected purchase is never copied, and Match, the duplicate pass and the
+stray cleanup never take one off an iPod — nor anything else Syncopation
+doesn't send.
 
 **The WAV rule (measured on an iPod nano 3G and an iPod shuffle 4G;
 identical results on both).** A 16-file scale set — each file announcing its
