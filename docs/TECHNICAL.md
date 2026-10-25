@@ -305,6 +305,46 @@ same one `afconvert` uses, which ignores seektables entirely and decodes such
 files without complaint. Both paths are in-process, so neither depends on a
 sandbox grant, and both produce identical 16-bit output.
 
+## Tags and loudness (from 1.4)
+
+### WAV and AIFF tags
+
+A WAV or AIFF keeps its tags in chunks of its own. Taggers — Mp3tag,
+foobar2000, MusicBrainz Picard, iTunes — write an ID3v2 tag into an `id3 `
+chunk (WAV) or an `ID3 ` chunk (AIFF); a WAV may also carry a `LIST`/`INFO`
+chunk, an AIFF `NAME`, `AUTH`, `(c) ` and `ANNO`. Syncopation finds the ID3
+chunk by walking the chunk headers — RIFF, RF64 and BW64 (the data size from
+`ds64`), AIFF and AIFC — without reading the audio, and reads the whole tag:
+album, album artist, track and disc, date, genre, composer, label,
+copyright, ISRC, the compilation flag, ReplayGain and Sound Check levels,
+and the cover. The INFO or NAME chunks fill whatever the ID3 tag leaves out.
+A copy made as WAV or AIFF carries these chunks byte for byte; a converted
+copy (Apple Lossless, AAC) carries the tags.
+
+### Leveling (Synco-auditoré)
+
+Leveling plays each song at one loudness. It takes, in order: ReplayGain
+(track or album gain, with its peak); an Opus file's R128 gain (Q7.8 dB
+against −23 LUFS, moved onto ReplayGain's −18 LUFS footing, per RFC 7845);
+Sound Check (`iTunNORM`); and, for a song whose tags carry none of these,
+the song's own loudness, measured once:
+
+- ITU-R BS.1770-4 / EBU R 128 integrated loudness: the two-stage
+  K-weighting filter, designed for the file's own sample rate; the mean
+  square over 400 ms blocks every 100 ms; an absolute gate at −70 LUFS and a
+  relative gate 10 LU below the gated mean. Channel weights come from each
+  channel's layout label — 1.0 for the fronts and centre, 1.41 for the
+  surrounds, none for an LFE — and a mono file counts as dual mono.
+- The gain brings the song to −18 LUFS, ReplayGain 2.0's reference, and the
+  sample peak caps it: a song is never raised past full scale.
+- The measurement is kept on the Mac, by file, size and date, and taken
+  again only when the file changes. It happens in the background while
+  leveling is on — the song playing and the next two — and no music file is
+  ever written to.
+- Checked against EBU Tech 3341's signals (a 1 kHz tone at −23 dBFS reads
+  −23.0 LUFS at 44.1, 48 and 96 kHz; both gating cases) and against ffmpeg's
+  ebur128 meter on noise, FLAC, AAC, MP3 and 5.1 files.
+
 ## Styling and OS compatibility
 
 The app runs on **macOS 13 (Ventura) and later**, as a universal binary for Intel and Apple Silicon, and adapts
@@ -383,3 +423,7 @@ published references in several fields.
   proprietary to Syncopation Pro and is not distributed.
 - The hash58 port retains its BSD attribution in `IPodDB.swift`
   (Copyright 2007 Christophe Fergeau, based on work by wtbw).
+- Loudness: ITU-R BS.1770-4, *Algorithms to measure audio programme loudness
+  and true-peak audio level*; EBU R 128 and EBU Tech 3341 (its test
+  signals); the ReplayGain 2.0 specification (the −18 LUFS reference); RFC
+  7845 (Opus's R128 gain fields).
