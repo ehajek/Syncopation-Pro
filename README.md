@@ -83,8 +83,9 @@ and the buttons on your headphones play, pause, skip and scrub it.
 From 1.4, everything dropped in is filed by album artist and album, and a
 duplicate asks first. Player mode (View → Player Mode) puts the sync
 controls away and leaves the library, the player, Cair and Auditoré. Get
-Info lists what the tags know: release date, label, copyright, ISRC and
-loudness levels among them.
+Info lists what the tags know: release date, label, copyright, ISRC, bit
+rate and loudness levels among them. WAV and AIFF files show their whole
+tag, cover included.
 
 ![Synco-biblio — the collection as a shelf, with the Playlists drawer open and the Now Playing card along the bottom](docs/images/biblio-1.2.jpg)
 
@@ -123,7 +124,8 @@ iPod, and every sync copies the music exactly as it is.
 From 1.4: presets (five built in, and your own), the response curve over the
 faders, a parametric mode that moves each band's centre and width, and
 leveling — every song at one loudness by the ReplayGain or Sound Check
-levels its tags carry, never louder than its peak allows.
+levels its tags carry, or by its loudness measured once (EBU R128) when they
+carry none, never louder than its peak allows.
 
 ![Synco-auditoré — gain and five octave-wide bands, 60 Hz to 12 kHz, with the equalizer switched on](docs/images/auditore-1.2.jpg)
 
