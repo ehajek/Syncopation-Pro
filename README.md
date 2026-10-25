@@ -80,6 +80,12 @@ out of the way. The Mac's own Now Playing follows along — track, cover and
 position in Control Center and the menu bar — and the keyboard's media keys
 and the buttons on your headphones play, pause, skip and scrub it.
 
+From 1.4, everything dropped in is filed by album artist and album, and a
+duplicate asks first. Player mode (View → Player Mode) puts the sync
+controls away and leaves the library, the player, Cair and Auditoré. Get
+Info lists what the tags know: release date, label, copyright, ISRC and
+loudness levels among them.
+
 ![Synco-biblio — the collection as a shelf, with the Playlists drawer open and the Now Playing card along the bottom](docs/images/biblio-1.2.jpg)
 
 ### Synco-cair
@@ -101,6 +107,10 @@ it only looks like that album, or leaves it as it is. Disc sets come together,
 strays by another act are moved out, and an album scattered across artist
 folders is rejoined.
 
+From 1.4, the names arrive with genre, composer, label, release date,
+copyright and ISRC. A song keeps its own tags and gains only what it lacks,
+unless Cair renames it.
+
 ![Synco-cair — the run in progress: albums already complete marked "nothing to change", covers added and an album renamed, each with a before-and-after thumbnail](docs/images/cair-1.2.jpg)
 
 ### Synco-auditoré
@@ -109,6 +119,11 @@ A five-band equalizer and gain on playback — live while a track plays,
 remembered between launches. It works on the sound as it leaves the app,
 and only there: nothing is written to your files, nothing changes on the
 iPod, and every sync copies the music exactly as it is.
+
+From 1.4: presets (five built in, and your own), the response curve over the
+faders, a parametric mode that moves each band's centre and width, and
+leveling — every song at one loudness by the ReplayGain or Sound Check
+levels its tags carry, never louder than its peak allows.
 
 ![Synco-auditoré — gain and five octave-wide bands, 60 Hz to 12 kHz, with the equalizer switched on](docs/images/auditore-1.2.jpg)
 
