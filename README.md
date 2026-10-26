@@ -123,7 +123,7 @@ and only there: nothing is written to your files, nothing changes on the
 iPod, and every sync copies the music exactly as it is.
 
 From 1.4: ten bands, an octave apart from 31 Hz to 16 kHz, where there were
-five; presets (five built in, and your own); the response curve over the
+five; presets (six built in — Harman's curve among them — and your own); the response curve over the
 faders; a parametric mode that moves each band's centre and width and can
 make the end bands shelves; and leveling — every song at one loudness by the ReplayGain or Sound Check
 levels its tags carry, or by its loudness measured once (EBU R128) when they
