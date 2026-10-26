@@ -80,8 +80,9 @@ out of the way. The Mac's own Now Playing follows along — track, cover and
 position in Control Center and the menu bar — and the keyboard's media keys
 and the buttons on your headphones play, pause, skip and scrub it.
 
-From 1.4, everything dropped in is filed by album artist and album, and a
-duplicate asks first. Player mode (View → Player Mode) puts the sync
+From 1.4, everything dropped in is filed by album artist and album; a song
+already there is skipped, kept as a second copy, or replaced by the
+higher-quality one, as set in Settings. Player mode (View → Player Mode) puts the sync
 controls away and leaves the library, the player, Cair and Auditoré. Get
 Info lists what the tags know: release date, label, copyright, ISRC, bit
 rate and loudness levels among them. WAV and AIFF files show their whole
@@ -121,9 +122,10 @@ remembered between launches. It works on the sound as it leaves the app,
 and only there: nothing is written to your files, nothing changes on the
 iPod, and every sync copies the music exactly as it is.
 
-From 1.4: presets (five built in, and your own), the response curve over the
-faders, a parametric mode that moves each band's centre and width, and
-leveling — every song at one loudness by the ReplayGain or Sound Check
+From 1.4: ten bands, an octave apart from 31 Hz to 16 kHz, where there were
+five; presets (five built in, and your own); the response curve over the
+faders; a parametric mode that moves each band's centre and width and can
+make the end bands shelves; and leveling — every song at one loudness by the ReplayGain or Sound Check
 levels its tags carry, or by its loudness measured once (EBU R128) when they
 carry none, never louder than its peak allows.
 
