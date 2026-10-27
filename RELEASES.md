@@ -11,6 +11,48 @@ for again.
 
 ---
 
+## 1.4 · Raffeimentó — Hi-Res Audio, no subscription (in development)
+
+Not released yet; this entry is the draft of what 1.4 carries, kept in step
+with the build.
+
+- **Hi-Res Audio, named.** 24-bit files at 96 or 192 kHz play in the app,
+  show their resolution in Get Info, and copy to cards and players byte for
+  byte. An iPod gets the 16-bit copy it was built for, resampled and
+  dithered, never more than it can play; the first two iPod generations,
+  which never learned Apple Lossless, get FLAC and Apple Lossless as AAC 256
+  instead of nothing.
+- **Auditoré grew up:** ten bands an octave apart, a parametric mode that
+  moves each band's centre and width and makes the end bands shelves, the
+  Harman Curve preset, presets for Sennheiser's main models (from AutoEq,
+  credited to their measurers), and leveling that plays every song at one
+  loudness.
+- **Biblio** shows genre, year and label beside every track, sortable;
+  Get Info on any track; delete an album from the shelf and the emptied
+  folder follows it to the Trash; drop files on the shelf and they are filed
+  where they belong, duplicates handled by your rule.
+- **Mini Player Mode** (View menu, ⇧⌘P): just the music; the sync controls
+  wait out of sight. Close the main window and it is put away, not gone —
+  Home, the Dock or closing the mini player brings it back.
+- **The whole window from the keyboard:** every face, mode and button has a
+  shortcut; Tab walks the collection, the arrows pick a song, Return plays
+  it. VoiceOver reads every control. A slim orchid slider on every scrolling
+  list, shown while you scroll.
+- **Cair** reads Apple's catalog through MusicKit now, with ISRC lookups, and
+  decides albums the way 1.3.1 does; its words and its legend are new.
+- **The iPod shuffle, 3rd generation** is accepted (the same list as the 4th);
+  the 1st and 2nd are turned away by name rather than handed a list they
+  can't read.
+- **Getting Started, rewritten.** We're an odd bird. We mean no harm.
+
+Repairs: folder names that only change their case now change their case;
+names with hidden characters are spelled plainly on the Mac and the card; a
+protected file never leaves for a device that can't play it; the iPod's
+database keeps its backup on every write and comes back from it if a write
+is interrupted; dates in MP3 tags keep their month and day.
+
+---
+
 ## 1.3.1 · Shufflé — one cover per album, and Cair hears the album
 
 | Edition | Status |
