@@ -9,6 +9,12 @@ Plug in an iPod classic or nano, pick a folder or a playlist, hit Sync —
 tracks appear on the device, with album art, ready to play the moment you
 eject.
 
+It is built for the cloud-free, Hi-Res Audio music lover: someone who owns
+the files — 24-bit FLAC, Apple Lossless, WAV and AIFF at 96 or 192 kHz —
+and wants to perfect them, play them and carry them without a subscription
+in the way. Hi-res plays in the app and copies to cards and players byte
+for byte; an iPod gets the 16-bit, 44.1 or 48 kHz copy it was built for.
+
 > This repository is the **support and documentation home** for Syncopation
 > Pro. The application itself is proprietary and its source code is not
 > published here. For the free, open-source edition, see the
@@ -28,8 +34,9 @@ eject.
   Match mirrors the same choice.
 - **FLAC, WAV and AIFF → ALAC conversion** — automatic, using macOS's
   built-in encoder. Output is 16-bit / 44.1–48 kHz, exactly what the devices
-  were built to play; hi-res sources are downsampled correctly. MP3, AAC and
-  Apple Lossless are copied untouched. (In 1.3: WAV and AIFF used to be copied
+  were built to play; hi-res sources are resampled and dithered correctly. MP3, AAC and
+  Apple Lossless are copied untouched. The first two iPod generations predate
+  Apple Lossless, so they get FLAC and Apple Lossless as AAC 256 instead. (In 1.3: WAV and AIFF used to be copied
   as-is, which only works for a narrow set of them — see the WAV rule in
   [`docs/TECHNICAL.md`](docs/TECHNICAL.md).)
 - **Album artwork** — covers are extracted from your files, rendered into
@@ -82,7 +89,7 @@ and the buttons on your headphones play, pause, skip and scrub it.
 
 From 1.4, everything dropped in is filed by album artist and album; a song
 already there is skipped, kept as a second copy, or replaced by the
-higher-quality one, as set in Settings. Player mode (View → Player Mode) puts the sync
+higher-quality one, as set in Settings. Mini Player mode (View → Mini Player Mode) puts the sync
 controls away and leaves the library, the player, Cair and Auditoré. Get
 Info lists what the tags know: release date, label, copyright, ISRC, bit
 rate and loudness levels among them. WAV and AIFF files show their whole
@@ -123,11 +130,18 @@ and only there: nothing is written to your files, nothing changes on the
 iPod, and every sync copies the music exactly as it is.
 
 From 1.4: ten bands, an octave apart from 31 Hz to 16 kHz, where there were
-five; presets (six built in — Harman's curve among them — corrections for Sennheiser's main models from AutoEq, credited to their measurers, and your own); the response curve over the
+five; presets (six built in — Harman's curve among them — corrections for Sennheiser's main models from [AutoEq](https://github.com/jaakkopasanen/AutoEq), credited to their measurers, and your own); the response curve over the
 faders; a parametric mode that moves each band's centre and width and can
 make the end bands shelves; and leveling — every song at one loudness by the ReplayGain or Sound Check
 levels its tags carry, or by its loudness measured once (EBU R128) when they
 carry none, never louder than its peak allows.
+
+The Sennheiser presets are derived from [AutoEq](https://github.com/jaakkopasanen/AutoEq)
+by Jaakko Pasanen, under the [MIT licence](https://github.com/jaakkopasanen/AutoEq/blob/master/LICENSE),
+from headphone measurements published by [oratory1990](https://www.reddit.com/r/oratory1990/)
+and [crinacle](https://crinacle.com/); each preset names its measurer, and the app's
+About panel carries the licence notice. The Harman Curve preset follows the Harman
+headphone target, from Harman International's research.
 
 ![Synco-auditoré — gain and five octave-wide bands, 60 Hz to 12 kHz, with the equalizer switched on](docs/images/auditore-1.2.jpg)
 
@@ -145,11 +159,12 @@ place.
   System / Light / Dark appearance work on every supported version.
 - An iPod in disk mode: iPod classic (all generations), iPod nano
   (through 4th gen), iPod video, mini, photo, or — from 1.3 — iPod shuffle
-  (4th generation). (iPod touch and iPhone use a different sync system and are
-  not supported; nor are iPod nano 5th generation and later, or iPod shuffle
-  1st–3rd generation. The 3rd-generation shuffle shares the 4th's list format
-  but has not been verified against hardware, so it is refused rather than
-  guessed at.)
+  (4th generation, and from 1.4 the 3rd). (iPod touch and iPhone use a
+  different sync system and are not supported; nor are iPod nano 5th
+  generation and later, or iPod shuffle 1st and 2nd generation, which keep
+  the original list layout. The 3rd-generation shuffle shares the 4th's list
+  format and is accepted, though it has not yet been verified against
+  hardware.)
 - A player running Rockbox syncs as an MP3 Player, not an iPod: it carries no
   Apple library, so files land in the library's own folder layout and the
   firmware's own hidden files are left alone.
